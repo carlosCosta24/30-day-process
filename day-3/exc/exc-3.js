@@ -67,6 +67,8 @@ console.log('-------------------------------------------------------------------
 //first script
 const butnOne = document.getElementById('perimeter')
 const butnTown = document.getElementById('area')
+const areaOut = document.getElementById('tri-area')
+const permOut = document.getElementById('tri-perimeter-out')
 
 butnOne.addEventListener('click',areaCalc)
 butnTown.addEventListener('click',perimCalc)
@@ -74,11 +76,20 @@ butnTown.addEventListener('click',perimCalc)
 
 
 function areaCalc(){
-let base = prompt('please enter the triangle');
-let height = prompt('please enter the height');
-console.log(base, height)
+let base = prompt('please enter the triangle base value');
+let height = prompt('please enter the triangle height');
+let result = base * height * 0.5;
+areaOut.innerText = result
+
+
 }
-function perimCalc(){}
+function perimCalc(){
+let lengthOne = parseInt(prompt('please enter the triangle first length'));
+let lengthTow = parseInt(prompt('please enter the triangle seconde length'));
+let lengthThree = parseInt(prompt('please enter the triangle third length'));
+let result = lengthOne + lengthTow +lengthThree;
+permOut.innerText = result
+}
 
 
 
