@@ -65,13 +65,16 @@ console.log('-------------------------------------------------------------------
 //Exercises: Level 2
 
 //first script
-const butnOne = document.getElementById('perimeter')
-const butnTown = document.getElementById('area')
-const areaOut = document.getElementById('tri-area')
-const permOut = document.getElementById('tri-perimeter-out')
+const butnOne = document.getElementById('perimeter');
+const butnTown = document.getElementById('area');
+const areaOut = document.getElementById('tri-area');
+const permOut = document.getElementById('tri-perimeter-out');
+const rectButn = document.getElementById('rect-area');
+const rectOut = document.getElementById('rect-area-out');
 
-butnOne.addEventListener('click',areaCalc)
-butnTown.addEventListener('click',perimCalc)
+butnOne.addEventListener('click',areaCalc);
+butnTown.addEventListener('click',perimCalc);
+rectButn.addEventListener('click', rectFun)
 
 
 
@@ -91,5 +94,21 @@ let result = lengthOne + lengthTow +lengthThree;
 permOut.innerText = result
 }
 
+//calculate an area of rectangle
 
 
+function rectAreaFun(){
+let lengthOne = parseInt(prompt('please enter the rectangle first length'));
+let lengthTow = parseInt(prompt('please enter the rectangle seconde length'));
+let result = lengthOne * lengthTow;
+rectOut.innerText =result;
+}
+
+//calculate an perimeter of rectangle
+
+function rectPerimeterFun(){
+    let lengthOne = parseInt(prompt('please enter the rectangle first length'));
+    let lengthTow = parseInt(prompt('please enter the rectangle seconde length'));
+    let result = 2*(lengthOne * lengthTow);
+    rectOut.innerText =result;
+i}
