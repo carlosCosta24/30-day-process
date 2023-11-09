@@ -105,6 +105,7 @@ rectOut.innerText =result;
 }
 
 //calculate an perimeter of rectangle
+//Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
 
 function rectPerimeterFun(){
     let lengthOne = parseInt(prompt('please enter the rectangle first length'));
