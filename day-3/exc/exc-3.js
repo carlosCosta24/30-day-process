@@ -113,3 +113,86 @@ function rectPerimeterFun(){
     let result = 2*(lengthOne * lengthTow);
     rectOut.innerText =result;
 i}
+
+//area of circle
+
+function circleArea(){
+    let pi = 3.16;
+    let radius = parseInt(prompt('please enter the r '));
+    let result = pi * radius**2;
+
+}
+
+function circlecircum(){
+    let pi = 3.16;
+    let radius = parseInt(prompt('please enter the r '));
+    let result = 2*pi * radius;
+}
+
+//slope
+function slopeCalcul(){
+    let x1 = parseInt(prompt('please enter x-1 value'));
+    let x2 = parseInt(prompt('please enter x-2 value'));
+    let y1 = parseInt(prompt('please enter y-1 value '));
+    let y2 = parseInt(prompt('please enter y-2 value '));
+    let slope = y1-y2 / x1 - x2 ;
+
+
+}
+
+//slope compare
+
+
+//Calculate the value of y (y = x2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
+
+
+function hourlyRate(){
+let hours = parseFloat(prompt('enter hours'));
+let rate = parseFloat(prompt('please enter rate per hour '));
+let earning = alert(`your weekly earning is ${hours * rate} `)
+}
+
+
+function nameJudge(){
+    let name = prompt('please enter yor name !');
+    let nameWithoutSpaces = name.trim();
+    if(nameWithoutSpaces.length < 7){
+        alert("you have a short name ");
+    }else{
+        alert("you have a long name ");
+
+    }
+
+    //Compare your first name length and your family name length
+
+    let firstName = prompt('enter your first name ').trim();
+    let familyName = prompt('enter your first name ').trim();
+
+    let compareTool;
+    if(firstName.length > familyName){
+        compareTool == "longer than"
+    }else{
+        compareTool == "shorter than "
+
+    }
+    i
+    let finalResult = `Your first name, ${firstName} is ${compareTool} your family name, ${familyName}`
+
+    alert(finalResult);
+}
+
+//Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
+
+let  myAge = 250;
+let yourAge = 25;
+console.log(`I am ${myAge - yourAge} older than you `);
+
+//drive age
+
+function drive (){
+    let currentDate = Date().getFullYear();
+    let birthDay = parseInt(prompt('please enter your birth date '));
+
+
+
+}
