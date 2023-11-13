@@ -73,8 +73,8 @@ const rectButn = document.getElementById('rect-area');
 const rectOut = document.getElementById('rect-area-out');
 
 butnOne.addEventListener('click',areaCalc);
-butnTown.addEventListener('click',perimCalc);
-rectButn.addEventListener('click', rectFun)
+//butnTown.addEventListener('click',perimCalc);
+//rectButn.addEventListener('click', rectFun)
 
 
 
@@ -190,9 +190,71 @@ console.log(`I am ${myAge - yourAge} older than you `);
 //drive age
 
 function drive (){
-    let currentDate = Date().getFullYear();
-    let birthDay = parseInt(prompt('please enter your birth date '));
+    let legalAge =18;
+    let currentDate = new Date().getFullYear();
+    let birthDay = parseInt(prompt('please enter your birth year '));
+    let status = currentDate - birthDay;
+    let finalDecision ;
+    if(status < legalAge){
+        finalDecision == `you will be allowed to drive after ${legalAge - status} `;
 
+    }else{
+        finalDecision == `you are ${status}. you are old enough to drive`;
+
+
+    }
 
 
 }
+
+
+function secondCalculator(){
+    let useAge = parseInt(prompt("please enter yor age"))
+    let ageInSeconde = useAge * 31536000;
+    let out ;
+}
+
+
+
+console.log(`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDay()+1} ${new Date().getHours()}-${ new Date().getMinutes()}`);
+console.log(`${new Date().getDay()+1}-${new Date().getMonth()+1}-${new Date().getFullYear()} ${new Date().getHours()}-${ new Date().getMinutes()}`);
+console.log(`${new Date().getDay()+1}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()} ${ new Date().getMinutes()}`);
+
+
+//level 3
+
+function humanReadable(){
+    let now = new Date();
+    let months = now.getMonth() + 1;
+    let humanMonth;
+    let day = now.getDay();
+    let humanDay;
+    let hours = now.getHours();
+    let humanHour;
+    let minutes = now.getMinutes()+1;
+    let humanMinute;
+    if(months < 10){
+        humanMonth == `0${months}`
+    }else{
+        humanMonth = months;
+    };
+    if(day < 10){
+        humanDay = `0${day}`;
+    }else{
+        humanDay = day;
+    };
+    if(hours < 10){
+        humanHour = `0${hours}`
+    }else{
+        humanHour = hours;
+    }
+    if(minutes < 10){
+        humanMinute = `0${minutes}`
+    }else{
+        humanMinute = minutes;
+    }
+    console.log(typeof(humanHour))
+    console.log(`${now.getFullYear()}-${humanMonth}-${humanDay} ${humanHour}:${humanMinute}`);
+
+}
+humanReadable();
