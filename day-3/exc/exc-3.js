@@ -73,8 +73,8 @@ const rectButn = document.getElementById('rect-area');
 const rectOut = document.getElementById('rect-area-out');
 
 butnOne.addEventListener('click',areaCalc);
-//butnTown.addEventListener('click',perimCalc);
-//rectButn.addEventListener('click', rectFun)
+butnTown.addEventListener('click',perimCalc);
+rectButn.addEventListener('click', rectAreaFun)
 
 
 
