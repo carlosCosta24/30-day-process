@@ -1,0 +1,1 @@
+export let webTech = ['html', 'css','javaScript','angular'];
