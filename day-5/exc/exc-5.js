@@ -103,23 +103,33 @@ console.log(fullStack)
 
 //Exercise: Level 3
 
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 let sorted = ages.sort();
 let max = sorted[9];
 let min = sorted[0];
 let theMedian = (ages[4] + ages[5]) /2;
 let range = max - min;
-let aver;
-let sum;
+let sum = 0;
 
-for(let i=0; i <ages.length; i++){
+
+for(let i=0; i < ages.length; i++){
 
     sum += ages[i];
 
 
+
 }
+let aver = sum / ages.length;
 console.log(max);
 console.log(min);
 console.log(theMedian);
 console.log(sum);
 console.log(range);
+console.log(aver);
+
+//Compare the value of (min - average) and (max - average)
+let minminusavrg = Math.abs(min - aver);
+let maxminusavrg = max -aver;
+console.log(minminusavrg);
+console.log(maxminusavrg);
+console.log(countries.slice(0,10));
