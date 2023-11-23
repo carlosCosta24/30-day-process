@@ -108,44 +108,60 @@ console.log(`The sum of all evens from 0 to 100 is ${theEvenSum}. And the sum of
 console.log('************************************************************');
 console.log(theArr);
 console.log('************************************************************');
-let randArr = [];
-for(let q = 0 ; q <= 5 ; q++ ){
-    let rand = Math.floor(Math.random()*10);
-    randArr.push(rand)
-};
-console.log(randArr);
-//Develop a small script which generate a six characters random id:
-let rand = Math.floor(Math.random()*7);
-let values =[1,2,3,4,5,6,7,8,9,'a','b','c','d','f','g'];
-let randString = [1,2,3,56,69,87,89];
-for(let l = 0 ; l<= randString.length ; l++){
-    randString.push(values[rand]);
+// let randArr = [];
+// for(let q = 0 ; q <= 5 ; q++ ){
+//     let rand = Math.floor(Math.random()*10);
+//     randArr.push(rand)
+// };
+// console.log(randArr);
+// //Develop a small script which generate a six characters random id:
+// let rand = Math.floor(Math.random()*7);
+// let values =[1,2,3,4,5,6,7,8,9,'a','b','c','d','f','g'];
+// let randString = [1,2,3,56,69,87,89];
+// for(let l = 0 ; l<= randString.length ; l++){
+//     randString.push(values[rand]);
 
-}
-console.log(rand);
-console.log(randString);
-console.log('************************************************************');
+// }
+// console.log(rand);
+// console.log(randString);
+console.log('************************************************************--');
 //Exercises: Level 2
-const readline = require("readline");
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-rl.question('chose an id length') , randomGenerator =>{
-    let idLength = require();
-    let id ='';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const chrLength = characters.length;
-    let o = 0;
-    while(o < idLength){
-            id += characters.charAt(Math.floor(Math.random() * chrLength));
-            o++;
-        }
-        readline.close();
-        return id;
-    }
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+// rl.question('chose an id length') , randomGenerator =>{
+//     let idLength = require();
+//     let id ='';
+//     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//     const chrLength = characters.length;
+//     let o = 0;
+//     while(o < idLength){
+//             id += characters.charAt(Math.floor(Math.random() * chrLength));
+//             o++;
+//         }
+//         readline.close();
+//         return id;
+//     }
 
-    console.log(randomGenerator(45));
-    console.log('************************************************************');
+//     console.log(randomGenerator(45));
+console.log('************************************************************//');
+//Write a script which generates a random hexadecimal number.
+let randomNum = Math.(Math.random()*6);
+console.log(randomNum);
+// function hexaGenerateor(){
+// let hexa = ['#','*','*','*','*','*'];
+// let valus = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9];
+// let randomNum = Math.floor(Math.random()*6);
+// for(let p = 0 ; p <hexa.length/2 ; p++ ){
+//     let starting = hexa[1];
+//     let sec = hexa[starting ++ ];
+//     starting.push(valus[randomNum]);
+//     sec.push(valus[randomNum])
+// }
+// return hexa;
+// }
+// console.log(hexaGenerateor());
 
 
