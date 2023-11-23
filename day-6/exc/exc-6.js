@@ -79,8 +79,8 @@ for(let y=0 ; y <= 100; y++){
 console.log('************************************************************');
 //Use for loop to iterate from 0 to 100 and print only prime numbers
 for(let y=0 ; y <= 100; y++){
-    if( y % y ==0 && y % 3 == 0 ){
-        console.log(y);
+    if( y > 2 && y % y === 0 && y /1 ===0){
+        console.log(`${y} is prime` );
     }
 }
 console.log('************************************************************');
@@ -114,17 +114,38 @@ for(let q = 0 ; q <= 5 ; q++ ){
     randArr.push(rand)
 };
 console.log(randArr);
-console.log('************************************************************');
 //Develop a small script which generate a six characters random id:
-let rand = Math.floor(Math.random()*10);
-let num =[1,2,3,4,5,6,7,8,9];
-let char = ['a','b','c','d','f','g'];
-let randString= [];
-for(let l = 0 ; l<= 6 ; l++){
-    randString.push(char[rand]);
-    randString.push(num[rand]);
-}
-console.log(randString);
+let rand = Math.floor(Math.random()*7);
+let values =[1,2,3,4,5,6,7,8,9,'a','b','c','d','f','g'];
+let randString = [1,2,3,56,69,87,89];
+for(let l = 0 ; l<= randString.length ; l++){
+    randString.push(values[rand]);
 
+}
+console.log(rand);
+console.log(randString);
+console.log('************************************************************');
+//Exercises: Level 2
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+rl.question('chose an id length') , randomGenerator =>{
+    let idLength = require();
+    let id ='';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const chrLength = characters.length;
+    let o = 0;
+    while(o < idLength){
+            id += characters.charAt(Math.floor(Math.random() * chrLength));
+            o++;
+        }
+        readline.close();
+        return id;
+    }
+
+    console.log(randomGenerator(45));
+    console.log('************************************************************');
 
 
