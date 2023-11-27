@@ -149,23 +149,16 @@ function randomGenerator(){
     }
 console.log(randomGenerator());
 console.log('************************************************************//');
-// //Write a script which generates a random hexadecimal number.
-// //function hexaGenerateor(){
-// let hexa = ['#','*','*','*','*','*','*'];
-// let valus = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9];
-// let randomNum = Math.floor(Math.random()*16);
-// hexa.forEach(element => {
-// element == (valus[randomNum]);
-// console.log(element);
-// });
-// //(let p = 0 ; p <hexa.length/2 ; p++ ){
-// //     let starting = hexa[1];
-// //     let sec = hexa[starting + 1 ];
-// //     starting == (valus[randomNum]);
-// //     sec ==(valus[randomNum]);
-// //}
-// //return hexa;
-// //}
-// //console.log(hexaGenerateor());
+//Write a script which generates a random hexadecimal number.
+function hexaGenerateor(){
+let hexa = ['#','*','*','*','*','*','*'];
+let valus = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9];
+for (let p = 1 ; p <hexa.length; p++ ){
+let randomNum = Math.floor(Math.random()*16);
+hexa.push(valus[randomNum]);
 
+}
+return hexa;
+}
+console.log(hexaGenerateor())
 
