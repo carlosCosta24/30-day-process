@@ -126,7 +126,6 @@ console.log('************************************************************');
  for(let l = 0 ; l<= 7 ; l++){
 randString.push(values[rand]);
 }
-console.log(rand);
 console.log(randString);
 console.log('**********--------');
 //Exercises: Level 2
@@ -135,30 +134,63 @@ function randomGenerator(){
     'O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g',+
     'h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',+
     '0','1','2','3','4','5','6','7','8','9'];
-    console.log(characters.length);
     let n = parseInt(prompt('enter the length of your id'));
     let id =[];
+    let theString;
     if(n !== 0 && n !== undefined){
     for(let o = 0; o < n ; o++ ){
         let rand = Math.floor(Math.random()*62);
         id.push(characters[rand]);
-    }
-    }
-    return id;
 
     }
-console.log(randomGenerator());
+    theString = id.toString();
+    return theString.split();
+}
+
+}
+//randomGenerator();
 console.log('************************************************************//');
 //Write a script which generates a random hexadecimal number.
 function hexaGenerateor(){
-let hexa = ['#','*','*','*','*','*','*'];
-let valus = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9];
-for (let p = 1 ; p <hexa.length; p++ ){
+let hexa = '';
+let valus = 'ABCDEF0123456789';
+for (let p = 0 ; p <6; p++ ){
 let randomNum = Math.floor(Math.random()*16);
-hexa.push(valus[randomNum]);
+ hexa += valus.charAt(randomNum);
 
 }
-return hexa;
+return `#${hexa}`;
 }
-console.log(hexaGenerateor())
+console.log(hexaGenerateor());
+console.log('************************************************************///');
+
+
+function rgpGnerator(){
+    let rgb = [] ;
+    for(let s = 0; s < 3 ; s++){
+        let randomNum = Math.floor(Math.random()*256);
+        rgb.push(randomNum);
+    }
+    return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
+
+}
+console.log(rgpGnerator());
+console.log('************************************************************////');
+//["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
+
+import { countries } from "../../day-5/exc/countries.js";
+function sumArrItems(){
+    let newArr = [];
+    let req = ['A','B','C','D','E','F','G','H','I','J','K'];
+    let index = 0;
+    for(let c = 0; c <= 11; c++ ){
+        if(countries[index] === req[index]){
+            newArr.push(countries[index]);
+            index+=1;
+        }
+    }
+    console.log(newArr);
+}
+console.log(sumArrItems());
+console.log('************************************************************/////');
 
