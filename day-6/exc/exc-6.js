@@ -180,17 +180,22 @@ console.log('************************************************************////');
 
 import { countries } from "../../day-5/exc/countries.js";
 function sumArrItems(){
-    let newArr = [];
     let req = ['A','B','C','D','E','F','G','H','I','J','K'];
-    let index = 0;
-    for(let c = 0; c <= 11; c++ ){
-        if(countries[index] === req[index]){
-            newArr.push(countries[index]);
-            index+=1;
+    let newArr = [];
+    let pointer = 0 ;
+    for(let c =0; c < req.length; c++){
+        if(countries[c][pointer] == req[c][pointer]){
+        newArr.push(countries[c]);
+        pointer++;
+
         }
+
     }
-    console.log(newArr);
+return newArr;
+
 }
 console.log(sumArrItems());
-console.log('************************************************************/////');
+console.log('*************************/////');
+
+
 
