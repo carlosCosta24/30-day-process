@@ -182,9 +182,11 @@ import { countries } from "../../day-5/exc/countries.js";
 function sumArrItems(){
     let req = ['A','B','C','D','E','F','G','H','I','J','K'];
     let newArr = [];
-    let pointer = 0 ;
-    for(let c =0; c < req.length; c++){
-        if(countries[c][pointer] == req[c][pointer]){
+    for(let c =0; c < countries.length; c++){
+        for(let r = 0 ; r < req.length; r++){
+
+        }
+        if(countries[c][0] == req[0]){
         newArr.push(countries[c]);
         pointer++;
 
