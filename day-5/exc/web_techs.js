@@ -1,1 +1,1 @@
-export let webTech = ['html', 'css','javaScript','angular'];
+export let webTech = ['html', 'css','javaScript','angular','React','Redux','Node','MongoDB'];
