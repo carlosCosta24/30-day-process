@@ -180,24 +180,148 @@ console.log('************************************************************////');
 
 import { countries } from "../../day-5/exc/countries.js";
 function sumArrItems(){
-    let req = ['A','B','C','D','E','F','G','H','I','J','K'];
+    let req = ['AL','BO','CA','DE','ET','FI','GE','HU','IR','JA','KE'];
     let newArr = [];
-    for(let c =0; c < countries.length; c++){
-        for(let r = 0 ; r < req.length; r++){
-
-        }
-        if(countries[c][0] == req[0]){
-        newArr.push(countries[c]);
-        pointer++;
-
-        }
-
-    }
+    //need to edit
+    for( let r = 0 ; r < req.length; r++ ){
+        for(  let c =0; c < countries.length; c++){
+            if(req[r][0] === countries[c][0]){
+                newArr.push(countries[c]);
+                break;
+        }}}
 return newArr;
 
 }
 console.log(sumArrItems());
 console.log('*************************/////');
+//Using the above countries array, create an array for countries length'.
+function returnLength(){
+    //need to edit
+    let array = sumArrItems();
+    let lengthArr = [];
+    for(let g = 0; g < array.length; g++ ){
+        lengthArr.push(array[g].length)
+    }
+    return lengthArr
+
+}
+console.log(returnLength());
+console.log('*************************/////**');
+
+//Use the countries array to create the following array of arrays:
+function codeItems(){
+    let processArr = sumArrItems();
+    let countArr= [];
+    let generalArr = [];
+    //need to edit
+    for( let r = 0 ; r < processArr.length; r++ ){
+            countArr = [`${processArr[r]}`,
+                            `${processArr[r].slice(0,3)}`,
+                            `${processArr[r].length}`];
+                            generalArr.push(countArr);
+                        }
+    return generalArr;
+}
+console.log(codeItems());
+console.log('****///****//***///***//**');
+//In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+function checkLand(){
+    let theProcess = sumArrItems();
+    let theResult =[];
+        for(let z = 0; z < theProcess.length;z++ ){
+            if(theProcess[z].includes('land')){
+                theResult.push(theProcess[z]);
+        }
+
+        //need to edit
+}
+    return theResult;
+}
+console.log(checkLand());
+console.log('****///****/////***//**');
+
+//In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+console.log('****/*****************//****//************///***//**');
+function checkIa(){
+    let theCountry = [...countries];
+    let theOut = [];
+    for(let k =0 ; k< theCountry.length; k++){
+        if(typeof theCountry[k] === 'string' && theCountry[k].includes('ia')){
+            theOut.push(theCountry[k]);
+        }
+    }
+    return theOut;
+
+}
+console.log(checkIa());
+console.log('****///****/////***//**');
+//Using the above countries array, find the country containing the biggest number of characters.
+function theLongest(){
+    let theCot = [...countries];
+    let theFinal = [];
+    let theLong = '';
+    for(let w = 0; w < theCot.length; w++){
+        if(theCot[w].length > theLong){
+            theLong = theCot[w];
+        }
+    }
+    theFinal.push(theLong, `${theLong.length}`);
+    return theFinal;
+}
+console.log(theLongest());
+console.log('****///****/////***//****--');
+
+//Using the above countries array, find the country containing only 5 characters.
+function withFive(){
+    let theCot = [...countries];
+    let theFinal = [];
+    for(let n = 0 ; n < theCot.length; n++){
+        if(theCot[n].length == 5 ){
+            theFinal.push(theCot[n], `the length = ${theCot[n].length}`);
+
+        }
+    }
+    return theFinal;
+}
+console.log(withFive());
+console.log('****///****/////***//****--');
+//Find the longest word in the webTechs array
+import{webTech} from "../../day-5/exc/web_techs.js"
+function theLenghty(){
+    let theArr = [...webTech];
+    let theFinal = ' ';
+    for(let n = 0 ; n < theArr.length; n++){
+        if(theArr[n].length > theFinal.length){
+            theFinal= theArr[n];
+        }
+    }
+    return theFinal;
+}
+console.log(theLenghty())
+console.log('****///****/////***//****--');
+//Use the webTechs array to create the following array of arrays:
+function elementWithLength(){
+    //need to edit
+let theGeneral = [];
+let subGeneral = [];
+let processField = [...webTech];
+    for(let u = 0 ; u < processField.length; u++){
+        subGeneral.push(processField[u], processField[u].length);
+        theGeneral.push(subGeneral)
+        subGeneral = [];
+    }
+
+return theGeneral
+}
+console.log(elementWithLength());
+console.log('****///****/////***//****--');
+//called a MERN stack app.
+
+console.log('****///****/////***//****--');
+
+
+
+
 
 
 
