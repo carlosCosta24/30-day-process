@@ -362,6 +362,117 @@ function doublefor(){
 console.log(doublefor());
 console.log('****///****//77777777777777777//***//****--+++++-------');
 //finally the 2 is finish
+//Exercises: Level 3
+//Copy countries array(Avoid mutation)
+let newCount = [...countries];
+console.log(newCount.sort());
+//Sort the webTechs array and mernStack array
+let mernArr =  ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"];
+console.log(mernArr.sort());
+//Extract all the countries contain the word 'land' from the countries array and print it as array
+function checkLands(){
+    let theFin = [];
+    for(let x = 0; x < newCount.length; x++){
+        if(newCount[x].includes('land')){
+            theFin.push(newCount[x]);
+        }
+    }
+    return theFin;
+}
+console.log(checkLands());
+console.log('****///****//77777777777777777//***//****--+++++-------');
+//Find the country containing the hightest number of characters in the countries array
+function checkLength(){
+    let theLengthy = [];
+    let tall = '';
+    for(let y = 0; y < newCount.length; y++){
+        if(newCount[y].length > tall.length){
+            tall = newCount[y];
+            theLengthy.push(tall);
+        }
+    }
+    return theLengthy;
+}
+console.log(checkLength());
+console.log('****///****//7777777$$$$$$$$$$$$$7777777777//***//****--+++++-------');
+//Extract all the countries contain the word 'land' from the countries array and print it as array
+function checkLandsToArr(){
+    let genfin =[];
+    let theFin = [];
+    for(let x = 0; x < newCount.length; x++){
+        if(newCount[x].includes('land')){
+            theFin.push(newCount[x]);
+        }
+    }
+    for(let u= 0 ; u < theFin.length; u++){
+        let sec = [];
+        sec.push(theFin[u]);
+        genfin.push(sec);
+    }
+    return genfin;
+}
+console.log(checkLandsToArr());
+console.log('****///****//77777777777777777//***//****--+++++-------');
+//Extract all the countries containing only four characters from the countries array and print it as array
+function checkFourLength(){
+    // need some modification
+    let theLengthy = [];
+    let genfin = [];
+    let fourTall = '0123';
+    for(let y = 0; y < newCount.length; y++){
+        if(newCount[y].length == fourTall.length){
+            theLengthy.push(newCount[y]);
+        }
+    }
+    for(let u= 0 ; u < theLengthy.length; u++){
+        let sec = [];
+        sec.push(theLengthy[u]);
+        genfin.push(sec);
+    }
+    return theLengthy;
+}
+console.log(checkFourLength());
+console.log('****///****//777777777777777775$%$%$%$%$%$//***//****--+++++-------');
+//Extract all the countries containing two or more words from the countries array and print it as array
+function checkTowPart(){
+    let theAllCount = [...countries];
+    let withTowPart = [];
+    let bigArr = [];
+    for(let z = 0 ; z < theAllCount.length; z++){
+        if(theAllCount[z].includes(' ')){
+            withTowPart.push(theAllCount[z])
+        }
+    }
+    for(let elm of withTowPart){
+        let prim = [];
+        prim.push(elm);
+        bigArr.push(prim);
+    }
+    return bigArr;
+}
+console.log(checkTowPart());
+console.log('****///****//777777777777777775$%$%$%$%$%$//***//****--+++++-------');
+
+//Reverse the countries array and capitalize each country and stored it as an array
+function revWithCapit(){
+    let first = [...countries];
+    let theResult = [];
+    let temp = [];
+    for(let t = first.length-1; t >= 0; t--){
+        let cap = first[t].charAt(0).toUpperCase() + first[t].slice(1);
+        temp.push(cap);
+    }
+    for(let e of temp){
+        theResult.push(e)
+    }
+    return theResult;
+
+}
+console.log(revWithCapit());
+
+
+
+
 
 
 
