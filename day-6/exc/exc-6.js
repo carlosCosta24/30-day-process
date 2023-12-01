@@ -316,8 +316,52 @@ return theGeneral
 console.log(elementWithLength());
 console.log('****///****/////***//****--');
 //called a MERN stack app.
+function mernStack(){
+    let mernArr = ['MongoDB','Express','React','Node '];
+    let fin = '';
+    for(const elem of mernArr){
+        fin += elem[0];
 
+    }
+    return fin.toString().replace(',','')
+
+}
+console.log(mernStack());
 console.log('****///****/////***//****--');
+//Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+function arrStack(){
+    let mernArr =  ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"];
+    for(const elem of mernArr){
+        console.log(elem);
+    }
+}
+console.log(arrStack());
+console.log('****///****/////***//****--+++');
+//reverse the order using loop without using a reverse method.
+function theRev(){
+   let primary =  ['banana', 'orange', 'mango', 'lemon'];
+   let secondary =[];
+   let index = 3
+   do{
+    secondary.push(primary[index])
+    index--
+   }while(index >= 0)
+   return secondary;
+}
+console.log(theRev());
+console.log('****///****/////***//****--+++++-------');
+//Print all the elements of array as shown below
+function doublefor(){
+    const fullStack = [['HTML', 'CSS', 'JS', 'React'],['Node', 'Express', 'MongoDB']];
+    for(let i = 0 ; i < fullStack.length; i++){
+        for(let j = 0; j < fullStack[i].length; j++){
+            console.log(fullStack[i][j]);
+        }
+    }
+}
+console.log(doublefor());
+console.log('****///****//77777777777777777//***//****--+++++-------');
+//finally the 2 is finish
 
 
 
