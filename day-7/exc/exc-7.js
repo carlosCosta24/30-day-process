@@ -116,7 +116,7 @@ function checkSeason(month){
 console.log(checkSeason("sep"));
 console.log("*-*/*/*+++))))+++++++-*-*");
 function findMax(){
-    let theMax = 0 ;
+    let theMax = arguments[0] ;
     for(let i = 0; i< arguments.length ; i++){
         if(arguments[i] > theMax ){
             theMax = arguments[i];
@@ -124,5 +124,100 @@ function findMax(){
     }
     return theMax;
 }
-console.log(findMax(5,15,500));
+console.log(findMax(0,-10,-30));
 console.log("*-*/*/*+++))))+++++++-*-*");
+
+//Exercises: Level 2
+
+function solveLinEquation(a, b, c){
+    let result = (c + b)/ a;
+    //ax + by + c = 0;
+    return result;
+
+}
+console.log(solveLinEquation(2,5,8));
+console.log("*-*/*/*+++))))+++++++-*-*");
+//Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
+function solveQuadEquation(a, b, c){
+    let result = (c + b)/ a;
+    //ax + by + c = 0;
+    return result;
+
+}
+console.log(solveQuadEquation(2,5,8));
+console.log("*-*/*/*+++))))+++++++-*-*");
+//Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+function arrSum(arr){
+    let theSum = 0;
+    for(let j = 0; j < arr.length; j++){
+        theSum += arr[j];
+    }
+    return theSum;
+}
+console.log(arrSum([1,5,8,9,4,7,2,3]));
+console.log("*-*/*/*+++))))++++++48676746874+-*-*");
+
+//Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+function showDateTime(){
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    return `${day}/${month}/${year} ${hour}:${minute}`;
+}
+console.log(showDateTime());
+console.log("*-*/*/*+++))))+8585885+++++48676746874+-*-*");
+//Declare a function name swapValues. This function swaps value of x to y.
+function swapValues(a, b){
+    let x = b;
+    let y = a;
+    return `the first value is ${x}, and the seconde value is ${y}`;
+}
+console.log(swapValues(5,7));
+console.log("*-*/*/*+++))))+++++++-*-*");
+//Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+function reverseArray(arr){
+    let temp = [];
+    for(let k = arr.length - 1; k >= 0; k-- ){
+        temp.push(arr[k]);
+    }
+    return temp;
+}
+console.log(reverseArray([1,2,3,6,4,5]));
+console.log(reverseArray(["a","s","d","f","e","r"]));
+console.log("*-*/*/*+++(((((((((((((((())))))))))))))))))))+++++++-*-*");
+
+//Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+
+function capitalizeArray(arr){
+    let temporary = [];
+    for(let m = 0; m < arr.length; m++){
+        temporary.push(arr[m].toString().toUpperCase());
+    }
+    return temporary;
+}
+console.log(capitalizeArray(["f","s","v","f","e","g"]));
+console.log("*-*/*/*+++(())))))))))))))+++++++-*-*");
+//Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+arr=[];
+function addItem(item){
+     arr.push(item);
+     return arr;
+}
+console.log(addItem( "/'/",2));
+console.log(addItem("as"));
+console.log(addItem("ty"))
+console.log("*-*/*/*+++(()))))))+++++++-*-*");
+//Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+function removeItem(index, arr){
+    return arr.splice(index,1);
+}
+console.log(removeItem(5,[1,2,3,4,5,6,7,8,5,4,3,3]));
+console.log("*-*/*/*+++(()))))))+++++++-*-*");
+
+
+
+
+
