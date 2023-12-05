@@ -216,6 +216,52 @@ function removeItem(index, arr){
 }
 console.log(removeItem(5,[1,2,3,4,5,6,7,8,5,4,3,3]));
 console.log("*-*/*/*+++(()))))))+++++++-*-*");
+//Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+function sumOfNumbers(number){
+    let sum = 0;
+    for(let r = number; r >= 0; r-- ){
+        sum += r
+
+    }
+    return sum
+
+}
+console.log(sumOfNumbers(10))
+console.log("*-*/*/*+++(()))))))+++++++-*-*");
+//Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+function sumOfOdds(n){
+    let oddSum = 0;
+    for(let w = n; n >= 0; n--){
+        if( n % 2 !== 0 ){
+            oddSum += n;
+        }
+
+    }
+    return oddSum;
+
+}
+console.log(sumOfOdds(15));
+console.log("*-*/*/*+++(())+++-*-*");
+//Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+
+function sumOfEven(numbers){
+    let evenSum = 0;
+    for(let t = numbers; t>= 0; t--){
+        if(t % 2 == 0){
+
+            evenSum += t;
+        }
+    }
+    return evenSum
+}
+console.log(sumOfEven(10));
+console.log("*-*/*/*+++-*-*");
+function evensAndOdds(theNum){
+
+
+
+}
+
 
 
 
