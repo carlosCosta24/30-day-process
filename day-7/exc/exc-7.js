@@ -257,10 +257,75 @@ function sumOfEven(numbers){
 console.log(sumOfEven(10));
 console.log("*-*/*/*+++-*-*");
 function evensAndOdds(theNum){
-
-
-
+    let theOddSum = 0;
+    let theEvenSum = 0;
+    for(let i = theNum; i >= 0; i--){
+        if( i !== 0){
+            if( i % 2 == 0){
+                theEvenSum += i;
+            }else if(i % 2 !== 0){
+                theOddSum += i;
+            }
+        }
+    }
+    return `the number of odds are ${theOddSum} \nthe number of even are ${theEvenSum}`
 }
+console.log(evensAndOdds(10));
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function which takes any number of arguments and return the sum of the arguments
+let theArrSum = function(...arg){
+    let theSum = 0;
+    for(let y = 0; y < arg.length; y++){
+        theSum += arg[y];
+    }
+    return theSum;
+}
+let result = theArrSum(1,2,3,8);
+console.log(result);
+console.log("*-*/*/*++//////////+-*-*");
+//Writ a function which generates a randomUserIp.
+const randomUserIP = () => {
+    let firstPart = Math.floor(Math.random()* 200);
+    let secPart = Math.floor(Math.random()* 190);
+    let thirdPart = Math.floor(Math.random()*100);
+    let fourthPart = Math.floor(Math.random()*60);
+
+    return `${firstPart}.${secPart}.${thirdPart}.${fourthPart}`
+}
+console.log(randomUserIP());
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function which generates a randomMacAddress
+const randomMacAddress = () => {
+    const charArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const numArr = [1,2,3,4,5,6,7,8,9,0];
+    let randomChar = Math.floor(Math.random()*27);
+    let randNum = Math.floor(Math.random()*9);
+    return `${ numArr[randNum] }${ numArr[randNum] + 2}: ${ numArr[randNum] + 1 }${charArr[randomChar]} : ${ numArr[randNum] }${ numArr[randNum] + 2} : ${charArr[randomChar]}${charArr[randomChar]} : ${charArr[randomChar]}${charArr[randomChar]} : ${charArr[randomChar]}${charArr[randomChar]}`
+}
+console.log(randomMacAddress());
+console.log("*-*/*/*++//////////+-*-*");
+//Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+const randomHexaNumberGenerator = () =>{
+    let varArr = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9,0];
+    let rand = Math.floor(Math.random()*15);
+    return `#${varArr[rand-1]}${varArr[rand+1]}${varArr[rand+2]}${varArr[rand-2]}${varArr[rand + 3]}${varArr[rand -3]}`;
+}
+console.log(randomHexaNumberGenerator());
+console.log("*-*/*/*++//////////+-*-*");
+//Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+const userIdGenerator = () =>{
+    theArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9,0];
+    let rand = Math.floor(Math.random()*15);
+    return `${ theArr[rand + 2] }${theArr[rand + 3]}${theArr[rand + 4]}${theArr[rand + 1]}${theArr[rand +5]}${theArr[rand +4]}${theArr[rand - 3]}`;
+}
+console.log(userIdGenerator());
+console.log("*-*/*/*++//////////+-*-*");
+
+
+
+
+
+
 
 
 
