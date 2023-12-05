@@ -320,6 +320,25 @@ const userIdGenerator = () =>{
 }
 console.log(userIdGenerator());
 console.log("*-*/*/*++//////////+-*-*");
+//Exercises: Level 3
+function userIdGeneratedByUser(){
+    let theArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9,0];
+    let theAmount = Number(prompt('please enter the number of th id you want'));
+    let theCharNum = Number(prompt('please enter the number of the id character'));
+    let temp = [];
+    for(let i = 0; i < theAmount; i++ ){
+        let theRand = Math.floor(Math.random()*(theArr.length - theCharNum));
+        let theReq = '';
+        theReq += theArr[theRand];
+        temp.push(theReq);
+        for(let j = 0 ; j <= theCharNum; j++){
+        }
+    }
+    return temp;
+}
+console.log(userIdGeneratedByUser());
+console.log("*-*/*/*++//////////+-*-*");
+
 
 
 
