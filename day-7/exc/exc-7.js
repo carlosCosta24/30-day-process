@@ -305,7 +305,7 @@ const randomMacAddress = () => {
 console.log(randomMacAddress());
 console.log("*-*/*/*++//////////+-*-*");
 //Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
-const randomHexaNumberGenerator = () =>{
+const randomHexaNumberGenerator = () => {
     let varArr = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9,0];
     let rand = Math.floor(Math.random()*15);
     return `#${varArr[rand-1]}${varArr[rand+1]}${varArr[rand+2]}${varArr[rand-2]}${varArr[rand + 3]}${varArr[rand -3]}`;
@@ -322,22 +322,93 @@ console.log(userIdGenerator());
 console.log("*-*/*/*++//////////+-*-*");
 //Exercises: Level 3
 function userIdGeneratedByUser(){
+    //very important to review and understand
     let theArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9,0];
-    let theAmount = Number(prompt('please enter the number of th id you want'));
-    let theCharNum = Number(prompt('please enter the number of the id character'));
+    let idAmount = Number(prompt('please enter the number of th id / id\'s you want'));
+    let charPerId = Number(prompt('please enter the number of character per id '));
     let temp = [];
-    for(let i = 0; i < theAmount; i++ ){
-        let theRand = Math.floor(Math.random()*(theArr.length - theCharNum));
-        let theReq = '';
-        theReq += theArr[theRand];
-        temp.push(theReq);
-        for(let j = 0 ; j <= theCharNum; j++){
+    for(let i = 0; i < idAmount; i++ ){
+        let theReq = [];
+        for(let j =0; j <charPerId; j++){
+
+            let theRand = Math.floor(Math.random() * theArr.length );
+            theReq.push(theArr[theRand]);
         }
+        // theReq.push(theArr[theRand]);
+        // theReq.length = 0;
+        // if(theReq[i].length !== charPerId){
+
+        // }
+        temp.push(theReq.join(''));
     }
-    return temp;
+
+    for(let a =0; a< temp.length; a++){
+        console.log(`${temp[a]}\t`)
+    }
+    return 'etfdl ya m7trm idhatk'
+
 }
-console.log(userIdGeneratedByUser());
+//console.log(userIdGeneratedByUser());
 console.log("*-*/*/*++//////////+-*-*");
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function name rgbColorGenerator and it generates rgb colors.
+let rgbColorGenerator = () =>{
+    let randomValues = Math.floor(Math.random()*255);
+    let red = randomValues +1;
+    let green =randomValues -5;
+    let blue = randomValues +3;
+    document.body.style.backgroundColor = `rgb( ${red} ,${blue},${green})` ;
+    document.getElementById('spec').style.color = randomHexaNumberGenerator();
+    return `(${red},${green},${blue})`;
+}
+console.log(rgbColorGenerator());
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+let arrayOfHexaColors = ()=>{
+    let hexElem = Number(prompt('how mush hexa color you want'))
+    let varArr = ['a','b','c','d','e','f',1,2,3,4,5,6,7,8,9,0];
+    let rand = Math.floor(Math.random()*15);
+    let hexArr = [];
+    for(let b = 0; b< hexElem; b++){
+        hexArr.push(`#${varArr[rand-1]}${varArr[rand+b]}${varArr[rand+2]}${varArr[rand-2]}${varArr[rand + 3]}${varArr[rand -b+3]}`);
+    }
+    return hexArr;
+
+}
+//console.log(arrayOfHexaColors());
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+function arrayOfRgbColors(){
+    let rgbElem = Number(prompt('how many rgb color you want'))
+    let randomValues = Math.floor(Math.random()*255);
+    let rgbArr = [];
+    let red = randomValues +1;
+    let green =randomValues -5;
+    let blue = randomValues +3;
+    for(let v = 0; v < rgbElem; v++){
+        rgbArr.push(`(${red},${green},${blue})`)
+    }
+    return rgbArr
+}
+
+//console.log(arrayOfRgbColors());
+console.log("*-*/*/*++//////////+-*-*");
+
+
+// let convertHexaToRgb = () => {
+//     let theHex = Number(prompt('enter the hexa color '));
+//     let tempArr = [];
+//     tempArr.push(theHex);
+//     for(let r = 0; r < tempArr; r++ ){
+//         if(tempArr.includes('#')){
+//             tempArr.pop(r);
+//         }
+//     }
+
+// }
+//Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+
+//Write a function generateColors which can generate any number of hexa or rgb colors.
 
 
 
