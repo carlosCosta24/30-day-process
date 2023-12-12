@@ -391,16 +391,35 @@ function arrayOfRgbColors() {
 //console.log(arrayOfRgbColors())
 console.log("*-*/*/*++//////////+-*-*");
 
-let convertHexaToRgb = (theHex) => {
+// let convertHexaToRgb = (theHex) => {
 
-    if (theHex.startsWith("#")) {
-        theHex = theHex.slice(1);
+//     if (theHex.startsWith("#")) {
+//         theHex = theHex.slice(1);
 
+//     }
+//     return theHex
+
+// }
+// convertHexaToRgb(124587);
+function convertHexaToRgb(hex) {
+    // Remove '#' if it's at the beginning of the input
+    if (hex.startsWith('#')) {
+        hex = hex.slice(1);
     }
-    return theHex
 
+    // Parse the hex values for red, green, and blue
+    let r = parseInt(hex.slice(0, 2), 16);
+    let g = parseInt(hex.slice(2, 4), 16);
+    let b = parseInt(hex.slice(4, 6), 16);
+
+    // Return the RGB color as a string
+    return `rgb(${r}, ${g}, ${b})`;
 }
-convertHexaToRgb(124587);
+
+// Example usage:
+let hexColor = prompt('Enter the hex color (with or without #):');
+let rgbColor = convertHexaToRgb(hexColor);
+console.log(`RGB color: ${rgbColor}`);
 //Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
 
 
