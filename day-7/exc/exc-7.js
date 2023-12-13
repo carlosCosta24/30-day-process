@@ -390,17 +390,7 @@ function arrayOfRgbColors() {
 }
 //console.log(arrayOfRgbColors())
 console.log("*-*/*/*++//////////+-*-*");
-
-// let convertHexaToRgb = (theHex) => {
-
-//     if (theHex.startsWith("#")) {
-//         theHex = theHex.slice(1);
-
-//     }
-//     return theHex
-
-// }
-// convertHexaToRgb(124587);
+//Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
 function convertHexaToRgb(hex) {
     // Remove '#' if it's at the beginning of the input
     if (hex.startsWith('#')) {
@@ -417,13 +407,88 @@ function convertHexaToRgb(hex) {
 }
 
 // Example usage:
-let hexColor = prompt('Enter the hex color (with or without #):');
-let rgbColor = convertHexaToRgb(hexColor);
-console.log(`RGB color: ${rgbColor}`);
+//let hexColor = prompt('Enter the hex color (with or without #):');
+//let rgbColor = convertHexaToRgb(hexColor);
+//console.log(`RGB color: ${rgbColor}`);
 //Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+console.log("*-*/*/*++//////////+-*-*");
 
+convertRgbToHexa = (rgb) => {
+    if (rgb.length < 9) {
+        alert("not a valid rgb values ");
+        return;
+    }
+    let rgbArr = rgb.split(",");
+    let firstThreeDigit = parseInt(rgbArr[0], 10).toString(16).padStart(2, "0");
+    let secThreeDigit = parseInt(rgbArr[1], 10).toString(16).padStart(2, "0");
+    let thirdThreeDigit = parseInt(rgbArr[2], 10).toString(16).padStart(2, "0");
 
+    return `hex (${firstThreeDigit},${secThreeDigit},${thirdThreeDigit})`
+
+}
+//let rgbColor = prompt("enter the rgb color value separated by , e.g (255,45,65)");
+//let hexaColor = convertRgbToHexa(rgbColor);
+//console.log(hexaColor);
 //Write a function generateColors which can generate any number of hexa or rgb colors.
+function generateColors() {
+    //need some refactor
+    let userInput = prompt("enter the required color system (ex hex , rgb)");
+    if (userInput.toLocaleLowerCase() !== "hex" || userInput.toLocaleLowerCase() !== "rgb") {
+        let numberReq = parseInt(prompt("enter the number required of colors"));
+        if (userInput.toLocaleLowerCase() == "hex") {
+            if (numberReq !== Number || numberReq <= 0) {
+                return
+            } else {
+                let varArr = ['a', 'b', 'c', 'd', 'e', 'f', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+                let rand = Math.floor(Math.random() * 15);
+                let hexArr = [];
+                for (let b = 0; b < numberReq; b++) {
+                    hexArr.push(`#${varArr[rand - 1]}${varArr[rand + b]}
+                ${varArr[rand + 2]}${varArr[rand - 2]}
+                ${varArr[rand + 3]}${varArr[rand - b + 3]}`);
+                }
+                return hexArr;
+            }
+        } else if (userInput.toLocaleLowerCase() == "rgb") {
+            if (numberReq !== Number && numberReq <= 0) {
+                return
+            } else {
+                let randomValues = Math.floor(Math.random() * 255);
+                let rgbArr = [];
+                let red = randomValues + 1;
+                let green = randomValues - 5;
+                let blue = randomValues + 3;
+                for (let v = 0; v < numberReq; v++) {
+                    rgbArr.push(`(${red},${green},${blue})`)
+                }
+                return rgbArr
+            }
+
+        }
+    } else {
+        alert("this is invalid option ya 3rs")
+    }
+
+}
+//console.log(generateColors());
+console.log("*-*/*/*++//////////+-*-*");
+//Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+let shuffleArray = (arr) => {
+    let newArr = []
+    for (let z = 0; z < arr.length; z++) {
+        let randomIndex = Math.floor(Math.random() * arr.length);
+        newArr.push(arr[randomIndex])
+
+    }
+    return newArr
+}
+let inputArray = prompt("Enter an array separated by commas (e.g., 1,2,3):");
+let originalArray = inputArray.split(",");
+let shuffledArray = shuffleArray(originalArray);
+console.log(shuffledArray);
+console.log("*-*/*/*++//////////+-*-*");
+
+//Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
 
 
