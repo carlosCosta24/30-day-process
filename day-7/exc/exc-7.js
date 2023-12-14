@@ -482,20 +482,109 @@ let shuffleArray = (arr) => {
     }
     return newArr
 }
-let inputArray = prompt("Enter an array separated by commas (e.g., 1,2,3):");
-let originalArray = inputArray.split(",");
-let shuffledArray = shuffleArray(originalArray);
-console.log(shuffledArray);
-console.log("*-*/*/*++//////////+-*-*");
+//let inputArray = prompt("Enter an array separated by commas (e.g., 1,2,3):");
+//let originalArray = inputArray.split(",");
+//let shuffledArray = shuffleArray(originalArray);
+//console.log(shuffledArray);
+//console.log("*-*/*/*++//////////+-*-*");
 
 //Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 
+let factorial = (theNumber) => {
+    let factorial = 1;
+    for (let u = theNumber; u > 0; u--) {
+        factorial *= u;
+    }
+    return factorial;
+
+}
+console.log(factorial(5));
+console.log("*-*/*/*++//////////+-*-*");
+//Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+function isEmpty(parameter) {
+    if (parameter === null || parameter === undefined || parameter === "") {
+        console.log("its empty value")
+    } else {
+        console.log(`${parameter}`)
+    }
+
+}
+isEmpty();
+console.log("*-*/*/*++//////////+-*-*");
+//Call your function sum, it takes any number of arguments and it returns the sum.
+function sum(...arg) {
+    theResult = 0;
+    for (let i = 0; i < arg.length; i++) {
+        theResult += arg[i];
+    }
+    return theResult;
+
+}
+console.log(sum(1, 2, 5, 8, 4));
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+let theSummation = (array) => {
+    let theSum = 0;
+    array.forEach(element => {
+        if (typeof element !== "number") {
+            console.log("kosmk");
+            return
 
 
+        } else {
 
+            theSum += element;
 
+            return theSum;
+        }
 
+    });
+    console.log(theSum);
 
+}
+console.log(theSummation([1, 5, 8, 7, 5, 6, 8, 4, 5]));
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+function average(inputArr) {
+    let theSum = 0;
+    inputArr.forEach(element => {
+        if (typeof element !== "number") {
+            console.log("kosmk");
+            return;
+        } else {
+            theSum += element;
+        }
+    });
+    let theAverage = theSum / inputArr.length;
+    return theAverage;
+}
+console.log(average([1, 2, 5, 4, 4, 4, 7, 8, 5, 6, 9, 8]));
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+let modifyArray = (arr) => {
+    if (arr.length < 5) {
+        return "item not found";
+    } else {
+
+        arr[4] = arr[4].toUpperCase();
+    }
+    return arr
+
+}
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']))
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function called isPrime, which checks if a number is prime number.
+console.log("*-*/*/*++//////////+-*-*");
+//Write a functions which checks if all items are unique in the array.
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function which checks if all the items of the array are the same data type.
+console.log("*-*/*/*++//////////+-*-*");
+//JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable whichcheck if a variable is valid or invalid variable.
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+console.log("*-*/*/*++//////////+-*-*");
+//Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of theoriginal array
+console.log("*-*/*/*++//////////+-*-*");
 
 
 
