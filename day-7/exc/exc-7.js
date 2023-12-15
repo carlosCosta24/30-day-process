@@ -1,3 +1,4 @@
+import { countries } from "../../day-5/exc/countries.js";
 //Declare a function fullName and it print out your full name.
 function myFullName() {
     let firstName = "molto";
@@ -201,7 +202,7 @@ function capitalizeArray(arr) {
 console.log(capitalizeArray(["f", "s", "v", "f", "e", "g"]));
 console.log("*-*/*/*+++(())))))))))))))+++++++-*-*");
 //Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
-arr = [];
+let arr = [];
 function addItem(item) {
     arr.push(item);
     return arr;
@@ -314,7 +315,7 @@ console.log(randomHexaNumberGenerator());
 console.log("*-*/*/*++//////////+-*-*");
 //Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
 const userIdGenerator = () => {
-    theArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    let theArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     let rand = Math.floor(Math.random() * 15);
     return `${theArr[rand + 2]}${theArr[rand + 3]}${theArr[rand + 4]}${theArr[rand + 1]}${theArr[rand + 5]}${theArr[rand + 4]}${theArr[rand - 3]}`;
 }
@@ -413,7 +414,7 @@ function convertHexaToRgb(hex) {
 //Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
 console.log("*-*/*/*++//////////+-*-*");
 
-convertRgbToHexa = (rgb) => {
+let convertRgbToHexa = (rgb) => {
     if (rgb.length < 9) {
         alert("not a valid rgb values ");
         return;
@@ -513,7 +514,7 @@ isEmpty();
 console.log("*-*/*/*++//////////+-*-*");
 //Call your function sum, it takes any number of arguments and it returns the sum.
 function sum(...arg) {
-    theResult = 0;
+    let theResult = 0;
     for (let i = 0; i < arg.length; i++) {
         theResult += arg[i];
     }
@@ -574,16 +575,92 @@ let modifyArray = (arr) => {
 console.log(modifyArray(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']))
 console.log("*-*/*/*++//////////+-*-*");
 //Write a function called isPrime, which checks if a number is prime number.
+function isPrime() {
+    let temp = 0;
+    let n = parseInt(prompt("please enter a number"));
+    for (let r = 1; r <= n; r++) {
+        if (n % r == 0) {
+            temp++;
+        }
+    }
+    if (temp == 2) {
+        console.log(`${n} is prime number`)
+    } else {
+        console.log(`${n} is not a prime number`);
+    }
+}
+//isPrime();
 console.log("*-*/*/*++//////////+-*-*");
 //Write a functions which checks if all items are unique in the array.
+let unique = (arr) => {
+    for (let y = 0; y < arr.length; y++) {
+        let pre = arr[y - 1];
+        let next = arr[y + 1];
+        if (arr[y] === pre || arr[y] === next) {
+            console.log("its not a unique array");
+            return false;
+        }
+    }
+    console.log("its a unique array")
+    return arr;
+}
+
+//unique([1, 2, 3, 5, 6, 6, 8, 7, 4]);
 console.log("*-*/*/*++//////////+-*-*");
 //Write a function which checks if all the items of the array are the same data type.
+function checkDataType(arr) {
+    for (let y = 1; y < arr.length; y++) {
+        let pre = typeof arr[y - 1];
+        let next = typeof arr[y + 1];
+        if (typeof arr[y] !== pre && typeof arr[y] !== next) {
+            console.log("its not a unique data array");
+            return false;
+        }
+    }
+    console.log("its a unique data array")
+    return arr;
+}
+checkDataType(["g", "f", 5]);
 console.log("*-*/*/*++//////////+-*-*");
-//JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable whichcheck if a variable is valid or invalid variable.
+//JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+function isValidVariable() {
+    let theInput = prompt("please enter the character");
+    if (theInput.includes("$") || theInput.includes("_")) {
+        return "its not valid character in javaScript";
+    }
+    return "its valid character in javaScript";
+}
+//console.log(isValidVariable());
 console.log("*-*/*/*++//////////+-*-*");
 //Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+function randomSeven() {
+    let randomArray = [];
+    for (let t = 0; t < 7; t++) {
+        let ran = Math.floor(Math.random() * 10);
+        randomArray.push(ran);
+    }
+    for (let q = 1; q < randomArray.length; q++) {
+        let ran = Math.floor(Math.random() * 10);
+        let temp;
+        if (randomArray.includes(q)) {
+            randomArray.pop(randomArray[q]);
+            randomArray.push(ran);
+        }
+    }
+    return randomArray;
+}
+console.log(randomSeven());
 console.log("*-*/*/*++//////////+-*-*");
 //Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of theoriginal array
+let reverseCountries = () => {
+    let theNewCountryArray = [...countries];
+    let theReversedArr = [];
+    for (let f = theNewCountryArray.length - 1; f > 0; f--) {
+        theReversedArr.push(theNewCountryArray[f]);
+    }
+    return theReversedArr;
+}
+console.log(reverseCountries());
 console.log("*-*/*/*++//////////+-*-*");
 
 
