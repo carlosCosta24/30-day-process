@@ -179,3 +179,183 @@ let countInfo = (allCountries) => {
 console.log(countInfo(allCountries));
 console.log("9867326790459836/***/");
 //Exercises: Level 3
+//Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+const personAccount = {
+    firstName: "molto",
+    lastName: "michel",
+    incomes: "1000$",
+    expenses: "800$",
+    totalIncome: function () {
+        console.log(this.incomes);
+    },
+    totalExpense: function () {
+        console.log(`my monthly expenses = ${this.expenses}`);
+    }, accountInfo: function () {
+        console.log(`account owner is: ${this.firstName} ${this.lastName},\ttotal expenses in the month is:${this.expenses}`)
+    }
+    , addIncome: function (newIncome) {
+        this.addIncome = newIncome;
+
+    }, addExpense: function (newExpenses) {
+        this.addExpenses = newExpenses;
+
+    },
+    accountBalance: function () {
+        if (this.addExpense == undefined && this.addIncome == undefined) {
+            return `total balance is: ${this.incomes} `
+        } else {
+            return `total balance is: ${this.incomes + this.newIncome} `
+
+        }
+
+    }
+
+
+}
+console.log(personAccount);
+console.log("9867326790459836/***/");
+//Questions:2, 3 and 4 are based on the following two arrays:users and products ()
+
+const usersInfo = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt: '08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt: '08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt: '08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt: '08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt: '08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+];
+
+const products = [
+    {
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
+];
+//Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
+
+function signUp(usersInfo) {
+
+    let userName = prompt("enter your username, please!");
+    for (let i = 0; i < usersInfo.length; i++) {
+        if (usersInfo[i].username.toLocaleLowerCase() == userName.toLocaleLowerCase()) {
+            console.log("you already have an account !");
+            return;
+        }
+    }
+    console.log("nice to have you lets create a new user and password ");
+}
+//signUp(usersInfo);
+//b. Create a function called signIn which allows user to sign in to the application
+console.log("9867326790459836/***/");
+function signIn(usersInfo) {
+    let userName = prompt("enter your username, please!");
+    for (let i = 0; i < usersInfo.length; i++) {
+        if (usersInfo[i].username.toLocaleLowerCase() == userName.toLocaleLowerCase()) {
+            console.log("you already have an account !");
+            return;
+        }
+    }
+    let newUserName = prompt("nice to have you lets create a new user Name: ");
+    let newUserPassword = parseInt(prompt("nice to have you lets create a new user and password "));
+    return console.log(`your newUserName is:${newUserName} your newPassword is: **************`);
+
+
+}
+//signIn(usersInfo);
+console.log("9867326790459836/***/");
+//The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product
+function rateProduct(products) {
+    for (const element of products) {
+        let theTotalRating = 0;
+        let array = element.ratings;
+        for (let h = 0; h < array.length; h++) {
+            theTotalRating += element.ratings[h].rate;
+        }
+        console.log(`product name is: ${element.name} total ratings is: ${theTotalRating}`);
+    }
+
+}
+rateProduct(products);
+console.log("9867326790459836/***/");
+function averageRating(products) {
+    for (const element of products) {
+        let totalRating = 0;
+        let ratingArray = element.ratings;
+        let timeRated = element.ratings.length;
+        for (let r = 0; r < ratingArray.length; r++) {
+            totalRating += element.ratings[r].rate;
+        }
+        console.log(`product name is: ${element.name} average ratings is: ${totalRating / timeRated}`);
+    }
+}
+averageRating(products);
+console.log("9867326790459836/***/");
+//Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+function likeProduct(products) {
+    for (const product of products) {
+        if (product.likes.length > 0) {
+            product.likes.pop();
+        } else {
+            product.likes.push("one like");
+        }
+    }
+    return products;
+}
+console.log(likeProduct(products));
