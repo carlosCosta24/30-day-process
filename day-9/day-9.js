@@ -94,3 +94,6 @@ console.log(
 );
 //Use map to create a new array by changing each number to square in the numbers array
 
+let squNum = numbers.map(number => number * number);
+console.log(squNum)
+console.log("ifgh0988ytdvsNDHBUIswrgh");
