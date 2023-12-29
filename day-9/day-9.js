@@ -97,3 +97,23 @@ console.log(
 let squNum = numbers.map(number => number * number);
 console.log(squNum)
 console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Use map to change to each name to uppercase in the names array
+let nameUpperCase = names.map(name => name.toLocaleUpperCase());
+console.log(nameUpperCase);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Use map to map the products array to its corresponding prices.
+let correspondingPrices = products.map((products) => {
+    let product = products.product;
+    let price = products.price;
+    console.log(`${product} = ${price}`);
+
+});
+console.log(correspondingPrices);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Use filter to filter out countries containing land.
+let counterWithoutLand = countries.filter((country) => {
+    return !country.includes("land");
+
+
+});
+console.log(counterWithoutLand);
