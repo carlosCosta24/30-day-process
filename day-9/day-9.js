@@ -117,3 +117,6 @@ let counterWithoutLand = countries.filter((country) => {
 
 });
 console.log(counterWithoutLand);
+//Use filter to filter out countries having six character.
+let sixChar = countries.filter((country) => { return !country.length > 6 });
+console.log(sixChar)
