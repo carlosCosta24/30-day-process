@@ -156,5 +156,15 @@ console.log(numbers.reduce((acc, cur) => {
 
 //Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
 let northCountry = ["Estonia", "Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+let last = northCountry.length - 1;
+let concatenated = northCountry.reduce((acc, curr, index) => {
+    if (index !== last) {
 
+        return acc.concat(curr, ",");
+    } else {
+        return acc.concat("and ", curr);
+
+    }
+}, " ");
+console.log(concatenated);
 
