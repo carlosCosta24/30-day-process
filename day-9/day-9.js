@@ -119,4 +119,42 @@ let counterWithoutLand = countries.filter((country) => {
 console.log(counterWithoutLand);
 //Use filter to filter out countries having six character.
 let sixChar = countries.filter((country) => { return !country.length > 6 });
-console.log(sixChar)
+console.log(sixChar);
+//Use filter to filter out countries containing six letters and more in the country array
+let sixAndMore = countries.filter((country) => {
+    return country.length >= 6
+});
+console.log(sixAndMore);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Use filter to filter out country start with 'E';
+let startWithE = countries.filter((country) => {
+    return country.charAt(0) === "E"
+});
+console.log(startWithE)
+//Use filter to filter out only prices with values.
+let priceValuePair = products.filter((product) => {
+    if (product.price !== ' ' && product.price !== '') {
+        return product
+    }
+});
+console.log(priceValuePair);
+//Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+let getStringLists = (arr) => {
+    arr.forEach((element, index, arr) => {
+        arr[index] = `${element}`
+    })
+};
+let test = [1, 2, "s", "d", "f", "g", "g", "f", "r", "s", "a"];
+getStringLists(test);
+console.log(test);
+//Use reduce to sum all the numbers in the numbers array.
+const initial = 0;
+console.log(numbers.reduce((acc, cur) => {
+    return acc + cur;
+
+}));
+
+//Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+let northCountry = ["Estonia", "Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+
+
