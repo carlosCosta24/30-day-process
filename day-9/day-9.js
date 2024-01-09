@@ -1,7 +1,7 @@
 //Exercises: Level 1
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const products = [
     { product: 'banana', price: 3 },
     { product: 'mango', price: 6 },
@@ -9,7 +9,7 @@ const products = [
     { product: 'avocado', price: 8 },
     { product: 'coffee', price: 10 },
     { product: 'tea', price: '' },
-]
+];
 //Explain the difference between forEach, map, filter, and reduce.
 /*
 forEach:
@@ -165,6 +165,61 @@ let concatenated = northCountry.reduce((acc, curr, index) => {
         return acc.concat("and ", curr);
 
     }
-}, " ");
-console.log(concatenated);
+}, "");
+console.log(`${concatenated}` + " are north European countries");
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Explain the difference between some and every:
+//Check if some of the elements are similar in one aspect. It returns boolean
+//every: Check if all the elements are similar in one aspect. It returns boolean
+
+//Use some to check if some names' length greater than seven in names array
+let graterThanSeven = names.some((name) => {
+    name.length > 7
+});
+
+console.log(graterThanSeven);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+
+
+//Use every to check if all the countries contain the word land
+let containLand = countries.every((country) => {
+    const land = 'land';
+    return country.toLowerCase().includes(land);
+});
+console.log(containLand);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+
+//Explain the difference between find and findIndex.
+//find: Return the first element which satisfies the condition
+//findIndex: Return the position of the first element which satisfies the condition
+
+//Use find to find the first country containing only six letters in the countries array
+let firstSixChar = countries.find((country) => {
+    return country.length == 6;
+});
+console.log(firstSixChar);
+
+//Use findIndex to find the position of the first country containing only six letters in the countries array
+let indexOfFirstSixChar = countries.findIndex((country) => {
+    return country.length == 6;
+});
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+console.log(indexOfFirstSixChar);
+//Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+let norwayPosition = countries.findIndex((country) => {
+    return country == "Norway";
+});
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+console.log(norwayPosition)
+//Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+let russiaPosition = countries.findIndex((country) => {
+    return country == "Russia";
+});
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+console.log(russiaPosition)
+
+
+
+
+
 
