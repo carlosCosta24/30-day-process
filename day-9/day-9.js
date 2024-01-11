@@ -444,31 +444,50 @@ console.log("ifgh0988ytdvsNDHBUIswrgh");
 console.log(categorizeCountries(allCountries, "br"));
 
 //Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
-
+// need to revest
 function arrOfObject(allCountries) {
     let result = [];
-    allCountries.every((country) => {
-        let count = 0;
-        let pointer = 0;
-        let startWith = country.charAt(0).toLowerCase();
-        if (country.charAt(startWith) == country[pointer + 1].charAt(startWith)) {
-            count++;
-            pointer++
+    allCountries.forEach((country) => {
+        let firstLetter = country.charAt(0).toLowerCase();
+        let obj = result.find((item) => item.letter === firstLetter);
+
+        if (obj) {
+            obj.count++;
         } else {
             result.push({
-                letter: `${startWith}`,
-                number: `${count}`
+                letter: firstLetter,
+                count: 1
             });
-            count = 0;
         }
-
     });
 
     return result
+}
 
+
+
+
+console.log(arrOfObject(allCountries));
+
+//Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+
+function getFirstTenCountries(arr) {
+    let number = 0;
+    arr.forEach((country) => {
+        number++;
+        if (number <= 10) {
+            console.log(country)
+        }
+
+    });
+    return number;
+};
+
+console.log(getFirstTenCountries(allCountries));
+//Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+function getLastTenCountries(arr) {
 
 }
-console.log(arrOfObject(allCountries));
 
 
 
