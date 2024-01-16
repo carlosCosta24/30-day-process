@@ -462,6 +462,7 @@ function arrOfObject(allCountries) {
     });
 
     return result
+<<<<<<< HEAD
 }
 
 
@@ -500,6 +501,36 @@ function getLastTenCountries(arr) {
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 
 console.log(getLastTenCountries(allCountries))
+=======
+}
+
+
+
+
+console.log(arrOfObject(allCountries));
+
+//Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+
+function getFirstTenCountries(arr) {
+    let number = 0;
+    arr.forEach((country) => {
+        number++;
+        if (number <= 10) {
+            console.log(country)
+        }
+
+    });
+    return number;
+};
+
+console.log(getFirstTenCountries(allCountries));
+//Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+function getLastTenCountries(arr) {
+
+}
+
+
+>>>>>>> a78e78fbc9432ee2b2e3ed963123a09bc3318768
 
 
 
