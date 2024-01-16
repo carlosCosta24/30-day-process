@@ -428,7 +428,6 @@ let usingOnlyReduce = products.reduce((acc, prod) => {
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 console.log(usingOnlyReduce);
 //Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
-
 function categorizeCountries(arr, pattern) {
     let finalArr = [];
     arr.filter((country) => {
@@ -438,11 +437,9 @@ function categorizeCountries(arr, pattern) {
         }
     })
     return finalArr;
-
 }
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 console.log(categorizeCountries(allCountries, "br"));
-
 //Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 // need to revest
 function arrOfObject(allCountries) {
@@ -462,16 +459,9 @@ function arrOfObject(allCountries) {
     });
 
     return result
-        <<<<<<<< < Temporary merge branch 1
 }
-
-
-
-
 console.log(arrOfObject(allCountries));
-
 //Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
-
 function getFirstTenCountries(arr) {
     let number = 0;
     arr.forEach((country) => {
@@ -483,84 +473,19 @@ function getFirstTenCountries(arr) {
     });
     return number;
 };
-
-console.log(getFirstTenCountries(allCountries));
-//Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
-function getLastTenCountries(arr) {
-
-}
-
-
-=========
-}
-
-
-
-
-console.log(arrOfObject(allCountries));
-console.log("ifgh0988ytdvsNDHBUIswrgh");
-
-
-//Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
-
-function getFirstTenCountries(arr) {
-    let number = 0;
-    arr.forEach((country) => {
-        number++;
-        if (number <= 10) {
-            console.log(country)
-        }
-
-    });
-    return number;
-};
-
 console.log(getFirstTenCountries(allCountries));
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 
 //Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 function getLastTenCountries(arr) {
-
-    for (let u = arr.length - 1; u <= arr.length; u++) {
-        console.log(arr.u)
+    for (let u = arr.length - 1; u >= 185; u--) {
+        console.log(arr[u]);
     }
-
-
 }
-console.log(getLastTenCountries(allCountries))
-console.log("ifgh0988ytdvsNDHBUIswrgh");
-
-console.log(getLastTenCountries(allCountries))
-=======
-}
+console.log(getLastTenCountries(allCountries));
 
 
 
-
-console.log(arrOfObject(allCountries));
-
-//Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
-
-function getFirstTenCountries(arr) {
-    let number = 0;
-    arr.forEach((country) => {
-        number++;
-        if (number <= 10) {
-            console.log(country)
-        }
-
-    });
-    return number;
-};
-
-console.log(getFirstTenCountries(allCountries));
-//Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
-function getLastTenCountries(arr) {
-
-}
-
-
->>>>>>> a78e78fbc9432ee2b2e3ed963123a09bc3318768
 
 
 
