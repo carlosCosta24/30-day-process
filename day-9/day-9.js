@@ -491,15 +491,17 @@ console.log("ifgh0988ytdvsNDHBUIswrgh");
 //Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 function getLastTenCountries(arr) {
 
-    for (let u = arr.length - 1; u <= arr.length; u--) {
-        console.log(u)
+    for (let u = arr.length - 1; u <= arr.length; u++) {
+        console.log(arr.u)
     }
 
 
 }
+console.log(getLastTenCountries(allCountries))
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 
-console.log(getLastTenCountries(allCountries))
+
+
 
 
 
