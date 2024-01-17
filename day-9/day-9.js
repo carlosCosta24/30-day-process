@@ -483,6 +483,40 @@ function getLastTenCountries(arr) {
     }
 }
 console.log(getLastTenCountries(allCountries));
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+//Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+//need to revisit
+function findOutLetter(arr) {
+    let firstLetters = [];
+    let letterObj = {};
+    let obj = {};
+    let repetition = 0;
+    for (let l = 0; l < arr.length; l++) {
+        const firstLetter = arr[l].charAt(0);
+        firstLetters.push(firstLetter);
+    }
+    firstLetters.forEach((ele) => {
+        let counter = 1;
+        if (letterObj[ele]) {
+            letterObj[ele]++;
+            counter = letterObj[ele];
+        } else {
+            letterObj[ele] = 1;
+        }
+
+        if (counter > repetition) {
+            repetition = counter;
+            obj = {
+                letter: ele,
+                count: repetition
+            };
+        }
+    });
+    console.log(obj);
+}
+findOutLetter(allCountries);
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+
 
 
 
