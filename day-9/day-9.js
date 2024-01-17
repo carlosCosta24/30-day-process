@@ -2594,8 +2594,8 @@ function mostSpokenLanguages(arr, number) {
             });
         });
         theOutput.sort((a, b) => {
-            if (a.countryPopulation > b.countryPopulation) return 1;
-            if (a.countryPopulation < b.countryPopulation) return -1;
+            if (a.countryPopulation > b.countryPopulation) return -1;
+            if (a.countryPopulation < b.countryPopulation) return 1;
             return 0;
         });
 
