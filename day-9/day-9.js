@@ -2384,11 +2384,8 @@ console.log("ifgh0988ytdvsNDHBUIswrgh");
 let graterThanSeven = names.some((name) => {
     name.length > 7
 });
-
 console.log(graterThanSeven);
 console.log("ifgh0988ytdvsNDHBUIswrgh");
-
-
 //Use every to check if all the countries contain the word land
 let containLand = countries.every((country) => {
     const land = 'land';
@@ -2396,7 +2393,6 @@ let containLand = countries.every((country) => {
 });
 console.log(containLand);
 console.log("ifgh0988ytdvsNDHBUIswrgh");
-
 //Explain the difference between find and findIndex.
 //find: Return the first element which satisfies the condition
 //findIndex: Return the position of the first element which satisfies the condition
@@ -2589,24 +2585,49 @@ function mostSpokenLanguages(arr, number) {
     }
     else {
         let theOutput = [];
-        for (let o = 0; o < number; o++) {
-            arr.forEach((country) => {
-                theOutput.push({
-                    name: country.name,
-                    countryPopulation: country.population.toLocaleString(),
-                    languages: country.languages
-                });
-            }).sort((a, b) => {
-                if (a.countryPopulation > b.countryPopulation) return -1;
-                if (a.countryPopulation < b.countryPopulation) return 1;
-                return 0;
+
+        arr.forEach((country) => {
+            theOutput.push({
+                name: country.name,
+                countryPopulation: country.population.toLocaleString(),
+                languages: country.languages[0]
             });
-        }
+        });
+        theOutput.sort((a, b) => {
+            if (a.countryPopulation > b.countryPopulation) return 1;
+            if (a.countryPopulation < b.countryPopulation) return -1;
+            return 0;
+        });
+
         return theOutput.slice(0, number);
     }
 }
-console.log(mostSpokenLanguages(countriesData, 10));
+console.log(mostSpokenLanguages(countriesData, 5));
 console.log("ifgh0988ytdvsNDHBUIswrgh");
+//*** Use countries_data.js file create a function which create the ten most populated countries
+function mostPopulatedCountries(arr, num) {
+    let countryPop = [];
+    arr.forEach((item) => {
+        countryPop.push({
+            name: item.name,
+            population: item.population.toLocaleString()
+
+        });
+
+    });
+    countryPop.sort((a, b) => {
+        if (a.population > b.population) return -1;
+        if (a.population < b.population) return 1;
+        return 0;
+    });
+    return countryPop.slice(0, num);
+
+};
+
+console.log(mostPopulatedCountries(countriesData, 9));
+console.log("ifgh0988ytdvsNDHBUIswrgh");
+
+
 
 
 
