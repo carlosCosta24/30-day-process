@@ -2218,6 +2218,7 @@ const products = [
     { product: 'coffee', price: 10 },
     { product: 'tea', price: '' },
 ];
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
 //Explain the difference between forEach, map, filter, and reduce.
 /*
 forEach:
@@ -2623,9 +2624,50 @@ function mostPopulatedCountries(arr, num) {
     return countryPop.slice(0, num);
 
 };
-
 console.log(mostPopulatedCountries(countriesData, 9));
 console.log("ifgh0988ytdvsNDHBUIswrgh");
+//*** Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
+let statistics = {
+    count: () => {
+        if (Array.isArray(ages)) {
+            return ages.length;
+        } else {
+            return 0;
+        }
+    },
+    sum: () => {
+        if (Array.isArray(ages)) {
+            return ages.reduce((cur, inc) => {
+                return cur + inc;
+            });
+        } else { return 0; }
+    },
+    mean: () => {
+        if (Array.isArray(ages)) {
+            let length = ages.length;
+            let sumation = ages.reduce((cur, inc) => {
+                return cur + inc;
+            })
+            return Math.ceil((sumation / length));
+        } { return 0; }
+
+    },
+    max: () => {
+        if (Array.isArray(ages)) {
+            return ages.sort((a, b) => {
+                if (a > b) return -1;
+                if (a < b) return 1;
+                return 0
+            })[0];
+        } else { return 0 }
+    },
+
+};
+console.log('Count:', statistics.count());
+console.log('Sum: ', statistics.sum());
+console.log('Mean: ', statistics.mean());
+console.log('Max: ', statistics.max());
+
 
 
 
