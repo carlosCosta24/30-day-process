@@ -34,21 +34,28 @@ let numberOfLetter = countries.forEach((country) => {
         temp.push(country.charAt(y));
 
     }
-    letters.push([temp.length]);
-})
+    return letters.push(temp.length);
+});
+console.log(letters)
 lettersWithNumber = [];
-let inserting = (countries, letters) => {
-    for (let c = 0; c < countries.length; c++) {
-        for (let l = 0; l < letters.length; l++) {
-            lettersWithNumber.push([countries[c]], [letters[l]])
+let inserting = () => {
+    let firstPointer = 0;
+    let secPointer = 0;
+    if (countries.length > firstPointer && letters.length > secPointer) {
+        for (let l = 0; l < countries.length; l++) {
+            lettersWithNumber.push([countries[firstPointer], letters[secPointer]]);
+            firstPointer++;
+            secPointer++;
         }
+    } else {
+        return false
     }
+
 }
-inserting(countries, letters);
-console.log(lettersWithNumber);
-console.log(letters);
+inserting();
+console.log(lettersWithNumber)
 console.log("jdphozjhpajhipae[rjhpoahjpaerjhaoprthka';fhgerk");
-let countriesMap = new Map(letters);
+let countriesMap = new Map(lettersWithNumber);
 console.log(countriesMap);
 
 
