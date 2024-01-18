@@ -34,9 +34,8 @@ let numberOfLetter = countries.forEach((country) => {
         temp.push(country.charAt(y));
 
     }
-    return letters.push(temp.length);
+    letters.push(temp.length);
 });
-console.log(letters)
 lettersWithNumber = [];
 let inserting = () => {
     let firstPointer = 0;
@@ -57,6 +56,34 @@ console.log(lettersWithNumber)
 console.log("jdphozjhpajhipae[rjhpoahjpaerjhaoprthka';fhgerk");
 let countriesMap = new Map(lettersWithNumber);
 console.log(countriesMap);
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
+//Exercises:Level 2
+//Find a union b
+let unionArr = [...a, ...b];
+let theUnion = new Set(unionArr);
+console.log(theUnion);
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
+//Find a intersection b
+let interSection = () => {
+    let firstSet = new Set(a);
+    let secSet = new Set(b);
+    let final = [...firstSet].filter((item) => { return secSet.has(item) })
+    return new Set(final);
+}
+console.log(interSection());
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
+//Find a with b
+let aWithB = () => {
+    let firstSet = new Set(a);
+    let secSet = new Set(b);
+    let final = [...firstSet].filter((item) => { return !secSet.has(item) })
+    return new Set(final);
+
+}
+console.log(aWithB());
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
+
+
 
 
 
