@@ -2628,45 +2628,130 @@ console.log(mostPopulatedCountries(countriesData, 9));
 console.log("ifgh0988ytdvsNDHBUIswrgh");
 //*** Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
 let statistics = {
+
     count: () => {
-        if (Array.isArray(ages)) {
-            return ages.length;
-        } else {
-            return 0;
-        }
+        return ages.length;
     },
     sum: () => {
-        if (Array.isArray(ages)) {
-            return ages.reduce((cur, inc) => {
-                return cur + inc;
-            });
-        } else { return 0; }
+        return ages.reduce((cur, inc) => {
+            return cur + inc;
+        });
     },
     mean: () => {
-        if (Array.isArray(ages)) {
-            let length = ages.length;
-            let sumation = ages.reduce((cur, inc) => {
-                return cur + inc;
-            })
-            return Math.ceil((sumation / length));
-        } { return 0; }
-
+        let length = ages.length;
+        let sumation = ages.reduce((cur, inc) => {
+            return cur + inc;
+        })
+        return Math.ceil((sumation / length));
     },
     max: () => {
-        if (Array.isArray(ages)) {
-            return ages.sort((a, b) => {
-                if (a > b) return -1;
-                if (a < b) return 1;
-                return 0
-            })[0];
-        } else { return 0 }
+        return ages.sort((a, b) => {
+            if (a > b) return -1;
+            if (a < b) return 1;
+            return 0
+        })[0];
     },
+    min: () => {
+        return ages.sort((a, b) => {
+            if (a < b) return -1;
+            if (a > b) return 1;
+            return 0
+        })[0]
+    },
+    range: () => {
+        return statistics.max() - statistics.min();
+
+    },
+    median: () => {
+        let length = ages.length;
+        let middel = Math.floor(length / 2);
+
+        return ages[middel];
+    },
+    mode: () => { // need refactor an revist
+        let repitionArr = [];
+        let next = 1;
+        let start = 0;
+        let repition = 0;
+        let final = null;
+        ages.sort();
+        ages.forEach(
+            (number, index) => {
+                if (ages[index] == ages[index + 1]) {
+                    repitionArr.push(number);
+                } else {
+                    start = index;
+                    next = index + 1;
+                }
+                return repitionArr;
+            });
+        for (let i = 0; i < repitionArr.length; i++) {
+            let timeReapeated = 0;
+            for (let j = 1; j < repitionArr.length; j++) {
+                if (repitionArr[i] === repitionArr[j]) {
+                    timeReapeated++;
+                }
+            }
+            if (timeReapeated > repition) {
+                repition = timeReapeated
+                final = repitionArr[i]
+            }
+        }
+        return ({
+            number: final,
+            count: repition
+        })
+    },
+    var: () => {
+        let squArr = [];
+        let length = ages.length;
+        ages.forEach((item) => {
+            squArr.push((statistics.mean() - item) ** 2)
+        });
+        return squArr.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0) / length;
+    },
+    std: () => {
+        return Math.ceil(Math.sqrt(statistics.var()));
+    },
+
+    freqDist: () => {//need to restudy
+        return "not finished yet "
+
+    },
+    describe: () => {
+        console.log(
+            `Count: ${statistics.count()}`,
+            `\nSum: ${statistics.sum()}`,
+            `\nMin: ${statistics.min()}`,
+            `\nMax: ${statistics.max()}`,
+            `\nRange: ${statistics.range()}`,
+            `\nMean: ${statistics.mean()}`,
+            `\nMode:${statistics.mode()}`,
+            console.log(`Median: ${statistics.median()}`),
+            `\nVariance: ${statistics.var()}`,
+            `\nStandard Deviation:${statistics.std()}`,
+            `\nFrequency Distribution: ${statistics.freqDist()}`
+        )
+    }
 
 };
 console.log('Count:', statistics.count());
 console.log('Sum: ', statistics.sum());
 console.log('Mean: ', statistics.mean());
 console.log('Max: ', statistics.max());
+console.log('Min: ', statistics.min());
+console.log('Range: ', statistics.range());
+console.log('Median: ', statistics.median());
+console.log('Mode: ', statistics.mode());
+console.log('Variance: ', statistics.var())
+console.log('Standard Deviation: ', statistics.std())
+console.log('Frequency Distribution: ', statistics.freqDist())
+console.log(statistics.describe());
+
+
+
 
 
 
