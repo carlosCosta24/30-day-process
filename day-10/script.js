@@ -1,5 +1,5 @@
 //Exercises:Level 1
-const countries = [
+const countriesData = [
     {
         name: 'Afghanistan',
         capital: 'Kabul',
@@ -2098,13 +2098,41 @@ console.log(aWithB());
 console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
 //Exercises:Level 3
 
-let mostSpokenLanguages = (arr, number) => {
+//How many languages are there in the countries object file.
+
+function languagesCount(arr) {
+    let languages = [];
+    arr.forEach((element) => {
+        languages.push(...element.languages);
+    });
+    let result = new Set(languages);
+    return result;
+}
+console.log(languagesCount(countriesData));
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
 
 
+//*** Use the countries data to find the 10 most spoken languages:
+
+let mostSpokenLanguages = (number) => {
+    let languages = [];
+    countriesData.forEach((element) => {
+        languages.push(...element.languages);
+    });
+
+    let languageCounts = languages.reduce((acc, curr) => {
+        acc[curr] = (acc[curr] || 0) + 1;
+        return acc;
+
+    }, {})
+    let sortedLanguages = Object.entries(languageCounts)
+        .sort((a, b) => parseInt(b[1]) - parseInt(a[1]),);
+
+    return sortedLanguages.slice(0, number);
 
 }
 
-
+console.log(mostSpokenLanguages(10))
 
 
 
