@@ -2132,7 +2132,10 @@ let mostSpokenLanguages = (number) => {
 
 }
 
-console.log(mostSpokenLanguages(10))
+console.log(mostSpokenLanguages(5));
+console.log(mostSpokenLanguages(3));
+console.log("-_--_------_____----______---___-_------__-----_____________---_____----______");
+
 
 
 
