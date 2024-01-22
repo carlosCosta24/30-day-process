@@ -64,7 +64,18 @@ console.log("-_-___________----_______-----______-----_____");
 let { width, height, area, perimeter } = rectangle;
 console.log(width, height, area, perimeter);
 console.log("-_-___________----_______-----______-----_____");
-
+//Exercises: Level 2
+//Iterate through the users array and get all the keys of the object using destructuring
+for (const { name, scores, skills, age } of users) {
+    console.log(name, scores, skills, age);
+}
+console.log("-_-___________----_______-----______-----_____");
+//Find the persons who have less than two skills
+for (const { name, skills } of users) {
+    if (skills.length < 2) {
+        console.log(name, skills, "dh 3yl 5wl");
+    }
+}
 
 
 
