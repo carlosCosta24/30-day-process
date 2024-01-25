@@ -2095,15 +2095,76 @@ console.log("-_-___________----_______-----______-----_____");
 
 for (const { name, capital, population, languages } of countriesObj) {
 
-    console.log(name, capital, `population: ${population}`, `languages:${[...languages]}`);
+    console.log(name, capital, `, population: ${population}`, `, languages:${[...languages]}`);
 
 }
 console.log("-_-___________----_______-----______-----_____");
 
 //A junior developer structure student name, skills and score in array of arrays which may not easy to read. Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.
-const student = ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]]
+const student = ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]];
+let nameStudent = [student[0], student[1], student[2][2], student[2][3]];
+console.log(nameStudent[0], nameStudent[1], nameStudent[2], nameStudent[3]);
+console.log("-_-___________----_______-----______-----_____");
+const students = [
+    ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]],
+    ['John', ['HTM', 'CSS', 'JS', 'React'], [85, 80, 85, 80]]
+]
+let convertArrayToObject = (arr) => {
+    return arr.map(([name, skills, score]) => {
+        return {
+            name: name,
+            skills: skills,
+            scores: score
+        }
 
-for (const elements of student) {
-    console.log(elements, `(${elements[1].length})`, elements[1], elements[2][2], elements[2][3]);
+    });
+}
+console.log(convertArrayToObject(students));
+console.log("-_-___________----_______-----______-----_____");
+
+//Copy the student object to newStudent without mutating the original object. In the new object add the following ?
+//Add Bootstrap with level 8 to the front end skill sets
+//Add Express with level 9 to the back end skill sets
+//Add SQL with level 8 to the data base skill sets
+//Add SQL without level to the data science skill sets
+
+const studentObj = {
+    name: 'David',
+    age: 25,
+    skills: {
+        frontEnd: [
+            { skill: 'HTML', level: 10 },
+            { skill: 'CSS', level: 8 },
+            { skill: 'JS', level: 8 },
+            { skill: 'React', level: 9 }
+        ],
+        backEnd: [
+            { skill: 'Node', level: 7 },
+            { skill: 'GraphQL', level: 8 },
+        ],
+        dataBase: [
+            { skill: 'MongoDB', level: 7.5 },
+        ],
+        dataScience: ['Python', 'R', 'D3.js']
+    }
 }
 
+const addingSkills = ({ skills = studentObj.skills }) => {
+
+    skills.frontEnd.push(
+        { skill: 'bootstrap', level: 8 }
+
+    )
+    skills.backEnd.push(
+        { skill: 'Express', level: 9 }
+    )
+    skills.dataBase.push(
+        { skill: 'SQL', level: 8 }
+    )
+    skills.dataScience.push(
+        'SQL'
+    )
+}
+addingSkills(studentObj);
+console.log(studentObj)
+console.log("-_-___________----_______-----______-----_____");
