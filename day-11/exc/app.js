@@ -2166,5 +2166,5 @@ const addingSkills = ({ skills = studentObj.skills }) => {
     )
 }
 addingSkills(studentObj);
-console.log(studentObj)
+console.log(studentObj);
 console.log("-_-___________----_______-----______-----_____");
