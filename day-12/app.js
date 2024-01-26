@@ -32,5 +32,37 @@ console.log(isValid('first-name')) // False
 console.log(isValid('1first_name')) // False
 console.log(isValid('firstname')) //True
 console.log('------------------------------**********************************--------------------------');
+//Exercises: Level 2
+//Write a function called tenMostFrequentWords which get the ten most frequent word from a string?
+paragraph = `I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`
+
+let tenMostFrequentWords = (input, number = input.length) => {
+    let pattern = /\b\w+\b/g
+    let words = input.match(pattern)
+    let result = [];
+    for (let n = 0; n < words.length; n++) {
+        let theWord = words[n].toLowerCase();
+        let count = 1;
+        for (let k = n + 1; k < words.length; k++) {
+            if (theWord === words[k].toLowerCase()) {
+                count++
+            }
+        }
+        let alreadyExist = result.find(item => item.word === theWord);
+        if (!alreadyExist) {
+
+            result.push(
+                {
+                    word: theWord,
+                    count: count
+                }
+            );
+        }
+    }
+    result.sort((a, b) => parseInt(b.count) - parseInt(a.count));
+    return result.slice(0, number);
+}
+console.log(tenMostFrequentWords(paragraph, 5));
+
 
 
