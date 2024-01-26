@@ -63,6 +63,35 @@ let tenMostFrequentWords = (input, number = input.length) => {
     return result.slice(0, number);
 }
 console.log(tenMostFrequentWords(paragraph, 5));
+console.log('------------------------------**********************************--------------------------');
+//Exercises: Level 3
+//Writ a function which cleans text. Clean the following text. After cleaning, count three most frequent words in the string.
+let sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`
+function cleanText(input, number = input.length) {
+    let pattern = /[%@$#&;]/g;
+    let wordPattern = /\b\w+\b/g
+    let cleanString = input.replace(pattern, '')
+    let result = new Array(cleanString.match(wordPattern));
+    let resultArr = [];
+    for (let r = 0; r < result.length; r++) {
+        let word = result[r];//.toLowerCase();
+        let count = 1;
+        for (let s = r + 1; s, result.length; s++) {
+            if (word === word[s])//.toLowerCase())
+                count++;
+        }
+        resultArr.push(
+            {
+                word: word,
+                count: count
+            }
+        );
+    }
+    return resultArr;
+}
+console.log(cleanText(sentence))
+
+
 
 
 
