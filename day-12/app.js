@@ -71,14 +71,16 @@ function cleanText(input, number = input.length) {
     let pattern = /[%@$#&;]/g;
     let wordPattern = /\b\w+\b/g
     let cleanString = input.replace(pattern, '')
-    let result = new Array(cleanString.match(wordPattern));
+    let result = cleanString.match(wordPattern);
     let resultArr = [];
     for (let r = 0; r < result.length; r++) {
-        let word = result[r];//.toLowerCase();
+        let word = result[r].toLowerCase();
         let count = 1;
-        for (let s = r + 1; s, result.length; s++) {
-            if (word === word[s])//.toLowerCase())
+        for (let s = r + 1; s < result.length; s++) {
+            if (word === result[s].toLowerCase()) {
+
                 count++;
+            }
         }
         resultArr.push(
             {
@@ -87,9 +89,12 @@ function cleanText(input, number = input.length) {
             }
         );
     }
-    return resultArr;
+    resultArr.sort((a, b) =>
+        b.count - a.count
+    )
+    return resultArr.slice(0, number);
 }
-console.log(cleanText(sentence))
+console.log(cleanText(sentence, 3));
 
 
 
