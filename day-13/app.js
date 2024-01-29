@@ -2150,23 +2150,23 @@ for (let i = 0; i <= 10; i += 1) {
             city: 'Copenhagen',
             age: 28
         }
-    ]
+    ];
 
-    console.group('Names')
-    console.log(names)
-    console.groupEnd()
+    console.group('Names');
+    console.log(names);
+    console.groupEnd();
 
-    console.group('Countries')
-    console.log(countries)
-    console.groupEnd()
+    console.group('Countries');
+    console.log(countries);
+    console.groupEnd();
 
-    console.group('Users')
-    console.log(user)
-    console.log(users)
-    console.groupEnd()
+    console.group('Users');
+    console.log(user);
+    console.log(users);
+    console.groupEnd();
 }
 //Exercises:Level 1
-console.group('count of cpountry')
+console.group('count of cpountry');
 console.table(countriesObj);
 console.table(countries);
 console.groupEnd();
@@ -2175,5 +2175,33 @@ console.assert(10 > 2 * 10, "of course not");
 //Write a warning message using console.warn()
 console.warn("take care becuse the console will be cleard after five second");
 //Write an error message using console.error()
-console.error("is this corect")
-setTimeout(() => { console.clear(), console.log("its clean automatically after 5 seconds ") }, 5000);
+console.error("is this corect");
+//setTimeout(() => { console.clear(), console.log("its clean automatically after 5 seconds ") }, 5000);
+//Check the speed difference among the following loops: while, for, for of, forEach
+console.time("while loop");
+let counter = 0;
+while (counter < 10) {
+    console.table(counter);
+    counter++;
+}
+console.timeEnd("while loop");
+/////////////////////////////////////////////////////////
+console.time("for loop");
+for (let o = 0; o < 10; o++) {
+    console.log(o);
+}
+console.timeEnd("for loop");
+////////////////////////////////////////////////////////
+let numbers = [0, 1, 2, 4, 5, 2, 5, 8, 5, 8];
+console.time("for of loop");
+for (const number of numbers) {
+    console.log(number)
+}
+console.timeEnd("for of loop");
+///////////////////////////////////////////////////////
+let numbersArr = [0, 1, 2, 4, 5, 2, 5, 8, 5, 8];
+console.time("forEach loop");
+numbersArr.forEach((n) => { console.log(n) });
+console.timeEnd("forEach loop")
+
+
