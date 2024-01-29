@@ -2165,10 +2165,15 @@ for (let i = 0; i <= 10; i += 1) {
     console.log(users)
     console.groupEnd()
 }
-//setTimeout(() => { console.clear(), console.log("its clean automatically after 5 seconds ") }, 5000);
 //Exercises:Level 1
 console.group('count of cpountry')
 console.table(countriesObj);
 console.table(countries);
 console.groupEnd();
-
+//Exercises:Level 2
+console.assert(10 > 2 * 10, "of course not");
+//Write a warning message using console.warn()
+console.warn("take care becuse the console will be cleard after five second");
+//Write an error message using console.error()
+console.error("is this corect")
+setTimeout(() => { console.clear(), console.log("its clean automatically after 5 seconds ") }, 5000);
