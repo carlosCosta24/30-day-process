@@ -27,3 +27,15 @@ dog.getLegs();
 const cat = new Animal("cat", "santa", 2, "white", 4)
 console.log(cat)
 cat.getDetails();
+
+//Exercises Level 2
+class Cat extends Animal {
+    constructor(gender) {
+        this.gender = gender;
+    }
+
+
+}
+
+console.log(Cat)
+
