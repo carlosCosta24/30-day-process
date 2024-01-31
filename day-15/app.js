@@ -39,3 +39,60 @@ class Cat extends Animal {
 
 console.log(Cat)
 
+//Exercises Level 3
+
+//Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
+let ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+
+class Statistics {
+    constructor(arr) {
+        this.arr = arr;
+    }
+    count() {
+        let length = this.arr.length;
+        return length;
+    }
+    sum() {
+        return this.arr.reduce((acc, cur) => {
+            return acc + cur;
+        });
+
+
+    }
+    min() {
+        let sorted = this.arr.sort();
+
+        return sorted[0];
+    }
+    max() {
+        let sorted = this.arr.sort();
+
+        return sorted[sorted.length - 1];
+    }
+    range() {
+        let sorted = this.arr.sort();
+        return sorted[sorted.length - 1] - sorted[0];
+    }
+    mean() {
+        return Math.ceil(this.sum() / this.count());
+    }
+    median() {
+        let length = this.arr.length;
+        let sortedArray = this.arr.slice().sort((a, b) => a - b);
+
+        if (length % 2 !== 0) {
+            return sortedArray[Math.floor(length / 2) + 1]
+        } else {
+            return sortedArray[length];
+        }
+    }
+}
+
+let stats = new Statistics(ages);
+console.log('Count:', stats.count());
+console.log('Sum:', stats.sum());
+console.log('Min: ', stats.min());
+console.log('Min: ', stats.max());
+console.log('Range: ', stats.range());
+console.log('Range: ', stats.mean());
+console.log('Median: ', stats.median());
