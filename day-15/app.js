@@ -81,9 +81,15 @@ class Statistics {
         let sortedArray = this.arr.slice().sort((a, b) => a - b);
 
         if (length % 2 !== 0) {
-            return sortedArray[Math.floor(length / 2) + 1]
+            return sortedArray[Math.floor(length / 2)]
         } else {
-            return sortedArray[length];
+            return sortedArray[length / 2];
+        }
+    }
+    mode() {
+        let sortedArr = this.arr.sort();
+        for (let f = 0; f < sortedArr.length; f++) {
+            let first = sortedArr[f + 1]
         }
     }
 }
@@ -96,3 +102,4 @@ console.log('Min: ', stats.max());
 console.log('Range: ', stats.range());
 console.log('Range: ', stats.mean());
 console.log('Median: ', stats.median());
+console.log('Mode: ', stats.mode());
