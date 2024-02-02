@@ -184,3 +184,10 @@ let studentString = JSON.stringify(student, undefined, 4);
 console.log(studentString);
 console.log("----------------------------------------------------------------------------");
 
+//Exercises Level 2
+//Stringify the students object with only firstName, lastName and skills properties
+
+let studentStrings = JSON.stringify(student, ["firstName", "lastName", "skills"], 4);
+console.log(studentStrings);
+console.log("----------------------------------------------------------------------------");
+
