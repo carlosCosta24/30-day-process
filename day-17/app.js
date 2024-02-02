@@ -71,5 +71,45 @@ localStorage.setItem("student", parsed);
 console.log(localStorage);
 console.log("///////////////////////////////////////////////////////////---------------------------------------------");
 
+//Exercises: Level 3
+//Create an object called personAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, //addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
 
+
+let personAccount = {
+    firstName: "ana",
+    lastName: "molto",
+    incomes: { total: "100,000 $" },
+    expenses: { total: "5000 $" },
+    totalIncome() {
+        return this.incomes[0];
+    },
+    totalExpense() {
+        return this.expenses[0];
+
+    },
+    accountInfo() {
+        return `name is: ${this.firstName}, last name is: ${this.lastName}, total income: ${this.incomes.total}, total expenses: ${this.expenses.total}`
+    },
+    addIncome() {
+        return "nothing"
+    },
+    addExpense() {
+        return "nothing"
+    },
+    accountBalance() { return `${parseInt(this.expenses.total) - parseInt(this.incomes.total)}` },
+
+}
+console.log(personAccount);
+console.log(personAccount.totalIncome());
+console.log(personAccount.totalExpense());
+console.log(personAccount.accountInfo());
+console.log(personAccount.addIncome());
+console.log(personAccount.addExpense());
+console.log(personAccount.accountBalance());
+
+
+let stringfyed = JSON.stringify(personAccount, undefined, 4);
+localStorage.setItem("account info ", stringfyed);
+console.log(localStorage);
+console.log("///////////////////////////////////////////////////////////---------------------------------------------");
 
