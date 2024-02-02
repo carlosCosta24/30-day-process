@@ -47,35 +47,33 @@ let ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 
 class Statistics {
     constructor(arr) {
         this.arr = arr;
-    }
+    };
     count() {
         let length = this.arr.length;
         return length;
-    }
+    };
     sum() {
         return this.arr.reduce((acc, cur) => {
             return acc + cur;
         });
-
-
-    }
+    };
     min() {
         let sorted = this.arr.sort();
 
         return sorted[0];
-    }
+    };
     max() {
         let sorted = this.arr.sort();
 
         return sorted[sorted.length - 1];
-    }
+    };
     range() {
         let sorted = this.arr.sort();
         return sorted[sorted.length - 1] - sorted[0];
-    }
+    };
     mean() {
         return Math.ceil(this.sum() / this.count());
-    }
+    };
     median() {
         let length = this.arr.length;
         let sortedArray = this.arr.slice().sort((a, b) => a - b);
@@ -85,13 +83,32 @@ class Statistics {
         } else {
             return sortedArray[length / 2];
         }
-    }
+    };
     mode() {
         let sortedArr = this.arr.sort();
         for (let f = 0; f < sortedArr.length; f++) {
             let first = sortedArr[f + 1]
+
         }
+    };
+
+    var() {
+        let theSquareArr = [];
+        let mean = this.mean();
+        this.arr.forEach(element => {
+            let square = (element - mean) ** 2
+            theSquareArr.push(square);
+        });
+        return theSquareArr.reduce((a, b) => {
+            return a + b;
+        }) / theSquareArr.length;
+    };
+    std() {
+        return parseInt(Math.sqrt(this.var()));
     }
+
+
+
 }
 
 let stats = new Statistics(ages);
@@ -102,4 +119,9 @@ console.log('Min: ', stats.max());
 console.log('Range: ', stats.range());
 console.log('Range: ', stats.mean());
 console.log('Median: ', stats.median());
+console.log('Variance: ', stats.var());
+console.log('Standard Deviation:: ', stats.std());
+// need to review and improve on
+/*console.log('Frequency Distribution: ', statistics.freqDist())
 console.log('Mode: ', stats.mode());
+console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}*/
