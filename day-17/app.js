@@ -46,4 +46,30 @@ localStorage.setItem('myCity', myCity);
 
 console.log(localStorage);
 console.log("///////////////////////////////////////////////////////////---------------------------------------------");
+localStorage.clear()
+//Create a student object. The student object will have first name, last name, age, skills, country, enrolled keys and values for the keys. Store the student object in your browser localStorage.
+let student = {
+    myFirstName: "molto",
+    myLastName: "rau",
+    myAge: 60,
+    myCountry: "brazil",
+    myCity: "aracaju",
+    skills: [
+        { tech: 'HTML', level: 10 },
+        { tech: 'CSS', level: 9 },
+        { tech: 'JS', level: 8 },
+        { tech: 'React', level: 9 },
+        { tech: 'Redux', level: 10 },
+        { tech: 'Node', level: 8 },
+        { tech: 'MongoDB', level: 8 }
+    ],
+
+}
+
+let parsed = JSON.stringify(student, undefined, 2);
+localStorage.setItem("student", parsed);
+console.log(localStorage);
+console.log("///////////////////////////////////////////////////////////---------------------------------------------");
+
+
 
