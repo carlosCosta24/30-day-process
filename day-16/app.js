@@ -191,3 +191,36 @@ let studentStrings = JSON.stringify(student, ["firstName", "lastName", "skills"]
 console.log(studentStrings);
 console.log("----------------------------------------------------------------------------");
 
+//Exercises Level 3
+
+//Parse the txt JSON to object
+
+let textObject = JSON.parse(txt, undefined, 4);
+console.log(textObject);
+console.log("----------------------------------------------------------------------------");
+
+//Find the user who has many skills from the variable stored in txt.
+
+let manySkills = (textObject) => {
+    let skillsLength = 0
+    let user;
+    let skills;
+    for (const username in textObject) {
+        if (textObject[username].skills.length > skillsLength) {
+
+            skillsLength = textObject[username].skills.length;
+            user = username;
+            skills = textObject[username].skills;
+
+        }
+    }
+    return `${user}, [${skills}], ${skillsLength}`;
+
+}
+
+let result = manySkills(textObject);
+console.log(result);
+
+
+
+
