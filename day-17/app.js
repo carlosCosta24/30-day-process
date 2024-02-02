@@ -111,5 +111,5 @@ console.log(personAccount.accountBalance());
 let stringfyed = JSON.stringify(personAccount, undefined, 4);
 localStorage.setItem("account info ", stringfyed);
 console.log(localStorage);
-console.log("///////////////////////////////////////////////////////////---------------------------------------------");
+console.log("///////////////////////////////////////////////////////////---------------");
 
