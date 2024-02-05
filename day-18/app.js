@@ -8,8 +8,18 @@ fetch(countriesAPI).then(response => response.json()).then(
         console.log(data);
         for (const ele of data) {
             console.info(`name: ${ele.name} , area: ${ele.area} , population: ${ele.population}`);
-            // console.table(ele.area);
-            // console.table(ele.name);
         }
     }
-).catch(error => console.error(error))
+).catch(error => console.error(error));
+
+//Exercises: Level 2
+//Print out all the cat names in to catNames variable.
+console.log("/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-");
+fetch(countriesAPI).then(response => response.json()).then(
+    data => {
+        for (const ele of data) {
+            console.info(`capital name: ${ele.capital}`);
+        }
+    }
+).catch(error => console.error(error));
+
