@@ -11,7 +11,9 @@ fetch(countriesAPI).then(response => response.json()).then(
             console.log(data);
             for (const ele of data) {
                 console.info(`name: ${ele.name} , area: ${ele.area} , population: ${ele.population}`);
+
             }
+            console.log("/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-");
         }, 500)
     }
 
@@ -20,7 +22,6 @@ fetch(countriesAPI).then(response => response.json()).then(
 
 //Exercises: Level 2
 //Print out all the cat names in to catNames variable.
-console.log("/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-");
 fetch(catsAPI).then(response => response.json()).then(data => {
 
     setTimeout(() => {
@@ -30,9 +31,41 @@ fetch(catsAPI).then(response => response.json()).then(data => {
                 catNames.push(ele.name);
             }
             console.log(catNames);
+
         }
+        console.log("/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-");
     }, 600)
 }
 
 ).catch(error => console.error(error));
 
+
+//Exercises: Level 3
+//Read the cats api and find the average weight of cat in metric unit.
+const averageCatWight = async () => {
+    try {
+        const theResp = await fetch(catsAPI);
+        const catArr = await theResp.json();
+        let catWights = [];
+        let result;
+        for (const ele of catArr) {
+            catWights.push(ele.weight.metric)
+        }
+        catWights.map((ele) => {
+            return toString(ele.replace(" - ", "."));
+
+        });
+        console.log(catArr.reduce((acc, cur) => {
+            let totalWights = parseInt(acc) + parseInt(cur);
+            // result = totalWights / catWights.length;
+            // return result
+            return totalWights;
+        }));
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+console.log("/*/*/*/*/*/*/ waiting for data  ");
+averageCatWight();
