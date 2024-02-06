@@ -49,18 +49,16 @@ const averageCatWight = async () => {
         let catWights = [];
         let result;
         for (const ele of catArr) {
-            catWights.push(ele.weight.metric)
+            const trueNumber = ele.weight.metric.replace(" - ", ".");
+            catWights.push(trueNumber);
         }
-        catWights.map((ele) => {
-            return toString(ele.replace(" - ", "."));
+        console.log(catWights)
 
-        });
-        console.log(catArr.reduce((acc, cur) => {
-            let totalWights = parseInt(acc) + parseInt(cur);
-            // result = totalWights / catWights.length;
-            // return result
-            return totalWights;
-        }));
+        // catArr.reduce((acc  , cur) => {
+        //     let totalWights = parseFloat(acc) + parseFloat(cur);
+        //     result = totalWights / catWights.length;
+        //     return result
+        // });
 
     } catch (err) {
         console.log(err)
