@@ -101,6 +101,30 @@ let biggestCountry = async () => {
 
 }
 
-biggestCountry().then(func => console.log(func))
+biggestCountry().then(func => console.log(func));
 
 
+
+//Read the countries api and count total number of languages in the world used as officials.
+
+fetch(countriesAPI).then(Response => Response.json()).then(data => {
+    let languages = [];
+    let final = [];
+    let uniq = [];
+    for (const item of data) {
+        languages.push(item.languages)
+    }
+    languages.forEach(item => {
+        for (const obj of item) {
+            final.push(obj.name)
+        }
+    });
+    for (let y = 0; y < final.length; y++) {
+        for (let x = 1; x < final.length; x++) {
+            if (languages[y] !== languages[x]) {
+                uniq.push(languages[y]);
+            }
+        }
+    }
+    console.log(uniq)
+}).catch(err => console.error(err));
