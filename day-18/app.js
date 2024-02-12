@@ -110,7 +110,6 @@ biggestCountry().then(func => console.log(func));
 fetch(countriesAPI).then(Response => Response.json()).then(data => {
     let languages = [];
     let final = [];
-    let uniq = [];
     for (const item of data) {
         languages.push(item.languages)
     }
