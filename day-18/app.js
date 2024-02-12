@@ -119,12 +119,11 @@ fetch(countriesAPI).then(Response => Response.json()).then(data => {
             final.push(obj.name)
         }
     });
-    for (let y = 0; y < final.length; y++) {
-        for (let x = 1; x < final.length; x++) {
-            if (languages[y] !== languages[x]) {
-                uniq.push(languages[y]);
-            }
+    let uniqLang = final.reduce((acc, cur) => {
+        if (!acc.includes(cur)) {
+            acc.push(cur);
         }
-    }
-    console.log(uniq)
+        return acc;
+    }, [])
+    console.log(`the official uniqLang number is ${uniqLang.length}`)
 }).catch(err => console.error(err));
