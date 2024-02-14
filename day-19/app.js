@@ -10,3 +10,33 @@ let callMe = () => {
     return myLastName()
 }
 console.log(callMe());
+
+//Exercises: Level 2
+//Create a closure which has three inner functions
+
+let callMeThree = () => {
+    let myName = 'molto';
+    let myLang = ['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't'];
+    let myLastName = () => {
+        return myName = myName + ' 98';
+
+
+    }
+    let getMyLang = () => {
+        return myLang.join('');
+
+    }
+    let printInfo = () => {
+        if (myName.length > 10) { // Base case: stop recursion when myName length is greater than 10
+            return '';
+        } else {
+            let myInfo = `${myLastName()} + ${getMyLang()}`;
+            console.warn(myInfo);
+            return myInfo;
+
+        }
+    }
+    printInfo();
+}
+callMeThree();
+
