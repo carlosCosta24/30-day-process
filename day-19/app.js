@@ -40,3 +40,47 @@ let callMeThree = () => {
 }
 callMeThree();
 
+
+//Exercises: Level 3
+/*Create a personAccount out function. It has firstname, lastname, incomes, expenses inner variables. It has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance inner functions. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.*/
+
+function personAccount() {
+    let firstName = 'molto';
+    let lastName = '98';
+    let incomes = '10000$';
+    let expenses = '3000$';
+
+    function totalIncome() {
+        console.log(incomes);
+    }
+    function totalExpense() {
+        console.log(expenses);
+    }
+    function accountInfo() {
+        console.log(`${firstName} ${lastName}`);
+
+    }
+    function addIncome() {
+        incomes + 10.000;
+
+    }
+    function addExpense() {
+        expenses + 2.000;
+    }
+    function accountBalance() {
+        return `${incomes}-${expenses}`;
+
+    }
+
+    accountInfo();
+    totalIncome();
+    totalExpense();
+    addIncome();
+    addExpense()
+    accountBalance()
+
+
+
+
+}
+personAccount()
