@@ -78,9 +78,5 @@ function personAccount() {
     addIncome();
     addExpense()
     accountBalance()
-
-
-
-
 }
 personAccount()
