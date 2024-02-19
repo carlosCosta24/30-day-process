@@ -6,6 +6,7 @@ console.log(firstP)
 const paragraphId_1 = document.querySelector("#first-title")
 const paragraphId_2 = document.querySelector("#second-title")
 const paragraphId_3 = document.querySelector("#third-title")
+const paragraphId_4 = document.querySelector("#fourth-title")
 
 console.log(paragraphId_1, paragraphId_2, paragraphId_3)
 
@@ -19,3 +20,11 @@ for (let n = 0; n < pNode.length; n++) {
 }
 
 //Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+paragraphId_4.textContent = "Fourth Paragraph";
+
+//Set id and class attribute for all the paragraphs using different attribute setting methods
+
+for (let r = 0; r < pNode.length; r++) {
+    pNode[r].setAttribute('class', 'paragraph')
+    pNode[r].setAttribute('id', `paragraph-number-${r}`)
+}
