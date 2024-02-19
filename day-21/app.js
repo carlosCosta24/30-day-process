@@ -53,14 +53,10 @@ for (let t = 0; t < pNode.length; t++) {
 //Set text content, id and class to each paragraph
 
 for (let f = 0; f < pNode.length; f++) {
-
     pNode[f].textContent = `i am the paragraph number ${f} `
     pNode[f].setAttribute("class", `p-${f}`)
     pNode[f].setAttribute("id", `p-number-${f}`)
-
 }
-
-
 
 
 
