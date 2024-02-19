@@ -28,3 +28,39 @@ for (let r = 0; r < pNode.length; r++) {
     pNode[r].setAttribute('class', 'paragraph')
     pNode[r].setAttribute('id', `paragraph-number-${r}`)
 }
+
+// Exercise: Level 2
+
+//Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+
+paragraphId_1.style.color = "red"
+paragraphId_2.style.backgroundColor = "red"
+paragraphId_3.style.border = "2px solid red"
+paragraphId_4.style.fontSize = "30px"
+paragraphId_4.style.fontFamily = "san serif"
+
+
+//Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
+
+for (let t = 0; t < pNode.length; t++) {
+    if (t % 2 === 0) {
+        pNode[t].style.color = "red"
+    } else {
+        pNode[t].style.color = "green"
+    }
+}
+
+//Set text content, id and class to each paragraph
+
+for (let f = 0; f < pNode.length; f++) {
+
+    pNode[f].textContent = `i am the paragraph number ${f} `
+    pNode[f].setAttribute("class", `p-${f}`)
+    pNode[f].setAttribute("id", `p-number-${f}`)
+
+}
+
+
+
+
+
