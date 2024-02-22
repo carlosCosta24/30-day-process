@@ -15,7 +15,17 @@ container.style.gap = "5px"
 container.style.flexWrap = "wrap"
 
 
-
+let isPrime = (num) => {
+    if (num < 2) {
+        return false
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false
+        }
+    }
+    return true
+}
 
 
 
@@ -26,11 +36,18 @@ for (let t = 0; t <= 100; t++) {
     numberDiv.style.width = " 60px"
     numberDiv.style.height = " 60px"
     numberDiv.style.display = "flex"
+
     if (t % 2 == 0) {
 
         numberDiv.style.backgroundColor = "green"
+
+    } else if (t > 2 && isPrime(t)) {
+
+        numberDiv.style.backgroundColor = "red"
+
     } else if (t % 2 !== 0) {
         numberDiv.style.backgroundColor = "yellow"
+
     }
 
 
