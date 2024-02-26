@@ -221,11 +221,55 @@ for (let r = 0; r < asabenehChallenges2020.challenges.length; r++) {
     list.appendChild(listItem)
 }
 body.append(list)
-
 nameSection.textContent = asabenehChallenges2020.author.firstName + asabenehChallenges2020.author.lastName
-
-
 body.append(nameSection)
+
+
+for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
+    let newIcon = document.createElement("span")
+    newIcon.textContent = asabenehChallenges2020.author.socialLinks[r].social
+    iconSection.appendChild(newIcon)
+
+}
+body.appendChild(iconSection)
+
+
+infoSection.textContent = asabenehChallenges2020.author.bio
+body.appendChild(infoSection)
+
+
+
+for (let s = 0; s < asabenehChallenges2020.author.titles.length; s++) {
+    let theList = document.createElement("ul")
+    let listElement = document.createElement("li")
+    listElement.textContent = asabenehChallenges2020.author.titles[s]
+    theList.appendChild(listElement)
+    skillsSection.appendChild(theList)
+    body.appendChild(skillsSection)
+}
+for (let s = 0; s < asabenehChallenges2020.author.skills.length; s++) {
+    let theList = document.createElement("ul")
+    let listElement = document.createElement("li")
+    listElement.textContent = asabenehChallenges2020.author.skills[s]
+    theList.appendChild(listElement)
+    body.appendChild(theList)
+
+}
+for (let s = 0; s < asabenehChallenges2020.author.qualifications.length; s++) {
+    let theList = document.createElement("ul")
+    let listElement = document.createElement("li")
+    listElement.textContent = asabenehChallenges2020.author.qualifications[s]
+    theList.appendChild(listElement)
+    body.appendChild(theList)
+}
+
+for (let r = 0; r < asabenehChallenges2020.keywords.length; r++) {
+    let elements = document.createElement("span")
+    elements.textContent = `#${asabenehChallenges2020.keywords[r]}`
+    keyWordsSection.appendChild(elements)
+    body.append(keyWordsSection)
+
+}
 
 
 

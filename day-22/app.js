@@ -37,7 +37,7 @@ for (let t = 0; t <= 100; t++) {
     numberDiv.style.height = " 60px"
     numberDiv.style.display = "flex"
 
-    if (t > 2 && isPrime(t)) {
+    if (t > 0 && isPrime(t)) {
 
         numberDiv.style.backgroundColor = "red"
 
@@ -484,3 +484,5 @@ const asabenehChallenges2020 = {
         }
     ]
 }
+
+
