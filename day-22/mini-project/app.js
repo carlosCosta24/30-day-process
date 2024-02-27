@@ -211,7 +211,21 @@ const months = [
     "December"
 ]
 const dateObject = new Date()
-
+const colorArray = [
+    "red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "cyan", "magenta",
+    "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgray", "lightgreen",
+    "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue",
+    "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon", "mediumaquamarine",
+    "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen",
+    "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin",
+    "navajowhite", "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid",
+    "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff",
+    "peru", "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown",
+    "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna",
+    "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue",
+    "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white", "whitesmoke",
+    "yellow", "yellowgreen"
+]
 const body = document.getElementsByTagName("body")[0]
 const heading = document.createElement("h1")
 const span = document.createElement("span")
@@ -225,23 +239,26 @@ const skillsSection = document.createElement("div")
 const keyWordsSection = document.createElement("div")
 
 //adding the content from the object
-heading.innerText = asabenehChallenges2020.description
-body.appendChild(heading)
+heading.innerText = asabenehChallenges2020.description + " " + dateObject.getFullYear()
 span.innerText = months[dateObject.getMonth()] + " " + dateObject.getFullYear().toString().slice(2) + " " + dateObject.getUTCFullYear() + " : " + dateObject.getHours() + ":" + dateObject.getMinutes() + ":" + dateObject.getSeconds()
-body.append(span)
 tittle.textContent = asabenehChallenges2020.challengeSubtitle
+
+body.appendChild(heading)
 body.append(tittle)
+body.append(span)
 
 for (let r = 0; r < asabenehChallenges2020.challenges.length; r++) {
+    let element = document.createElement("li")
     let listItem = document.createElement("details")
     let summary = document.createElement("summary")
     let status = document.createElement("p")
     listItem.textContent = asabenehChallenges2020.challenges[r].topics
     summary.textContent = asabenehChallenges2020.challenges[r].name
     status.textContent = asabenehChallenges2020.challenges[r].status
-    list.appendChild(summary)
-    list.appendChild(listItem)
-    list.appendChild(status)
+    element.appendChild(summary)
+    element.appendChild(listItem)
+    element.appendChild(status)
+    list.append(element)
 }
 
 body.append(list)
@@ -255,10 +272,8 @@ for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
 
 }
 
-body.appendChild(iconSection)
-
-
 infoSection.textContent = asabenehChallenges2020.author.bio
+body.appendChild(iconSection)
 body.appendChild(infoSection)
 
 
@@ -292,7 +307,50 @@ for (let r = 0; r < asabenehChallenges2020.keywords.length; r++) {
     elements.textContent = `#${asabenehChallenges2020.keywords[r]}`
     keyWordsSection.appendChild(elements)
     body.append(keyWordsSection)
+}
 
+//setInterval(() => { year[0].style.color = colorArray[Math.floor(Math.random() * 49)] }, 1000)
+setInterval(() => { span.style.backgroundColor = colorArray[Math.floor(Math.random() * 49)] }, 1000)
+
+
+//styling the web page
+body.style.display = "flex"
+body.style.flexDirection = "column"
+body.style.alignItems = "center"
+body.style.fontFamily = "cursive"
+
+//tittle
+
+tittle.style.textDecoration = "underline"
+
+//list
+list.style.display = "flex"
+list.style.flexDirection = "column"
+list.style.width = "540px"
+list.style.listStyle = "none"
+
+
+
+let listLi = document.querySelectorAll("li")
+
+for (let h = 0; h < listLi.length; h++) {
+    listLi[h].style.display = "flex"
+    listLi[h].style.flexDirection = "row"
+    listLi[h].style.alignItems = "center"
+    listLi[h].style.justifyContent = "space-around"
+
+    if (listLi[h].textContent.includes("Done")) {
+
+        listLi[h].style.backgroundColor = "green"
+
+    } else if (listLi[h].textContent.includes("Ongoing")) {
+
+        listLi[h].style.backgroundColor = "orange"
+
+    } else {
+
+        listLi[h].style.backgroundColor = "red"
+    }
 }
 
 
