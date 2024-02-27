@@ -196,6 +196,22 @@ const asabenehChallenges2020 = {
         }
     ]
 }
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+const dateObject = new Date()
+
 const body = document.getElementsByTagName("body")[0]
 const heading = document.createElement("h1")
 const span = document.createElement("span")
@@ -211,19 +227,26 @@ const keyWordsSection = document.createElement("div")
 //adding the content from the object
 heading.innerText = asabenehChallenges2020.description
 body.appendChild(heading)
-span.innerText = new Date().getFullYear()
+span.innerText = months[dateObject.getMonth()] + " " + dateObject.getFullYear().toString().slice(2) + " " + dateObject.getUTCFullYear() + " : " + dateObject.getHours() + ":" + dateObject.getMinutes() + ":" + dateObject.getSeconds()
 body.append(span)
 tittle.textContent = asabenehChallenges2020.challengeSubtitle
 body.append(tittle)
+
 for (let r = 0; r < asabenehChallenges2020.challenges.length; r++) {
     let listItem = document.createElement("details")
+    let summary = document.createElement("summary")
+    let status = document.createElement("p")
     listItem.textContent = asabenehChallenges2020.challenges[r].topics
+    summary.textContent = asabenehChallenges2020.challenges[r].name
+    status.textContent = asabenehChallenges2020.challenges[r].status
+    list.appendChild(summary)
     list.appendChild(listItem)
+    list.appendChild(status)
 }
+
 body.append(list)
 nameSection.textContent = asabenehChallenges2020.author.firstName + asabenehChallenges2020.author.lastName
 body.append(nameSection)
-
 
 for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
     let newIcon = document.createElement("span")
@@ -231,6 +254,7 @@ for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
     iconSection.appendChild(newIcon)
 
 }
+
 body.appendChild(iconSection)
 
 
@@ -239,28 +263,28 @@ body.appendChild(infoSection)
 
 
 
+let theTitlesList = document.createElement("ul")
 for (let s = 0; s < asabenehChallenges2020.author.titles.length; s++) {
-    let theList = document.createElement("ul")
     let listElement = document.createElement("li")
-    listElement.textContent = asabenehChallenges2020.author.titles[s]
-    theList.appendChild(listElement)
-    skillsSection.appendChild(theList)
-    body.appendChild(skillsSection)
+    listElement.textContent = asabenehChallenges2020.author.titles[s][0] + asabenehChallenges2020.author.titles[s][1]
+    theTitlesList.appendChild(listElement)
+    skillsSection.appendChild(theTitlesList)
+    body.appendChild(theTitlesList)
 }
+let theSkillList = document.createElement("ul")
 for (let s = 0; s < asabenehChallenges2020.author.skills.length; s++) {
-    let theList = document.createElement("ul")
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.skills[s]
-    theList.appendChild(listElement)
-    body.appendChild(theList)
+    theSkillList.appendChild(listElement)
+    body.appendChild(theSkillList)
 
 }
+let theQualificationList = document.createElement("ul")
 for (let s = 0; s < asabenehChallenges2020.author.qualifications.length; s++) {
-    let theList = document.createElement("ul")
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.qualifications[s]
-    theList.appendChild(listElement)
-    body.appendChild(theList)
+    theQualificationList.appendChild(listElement)
+    body.appendChild(theQualificationList)
 }
 
 for (let r = 0; r < asabenehChallenges2020.keywords.length; r++) {
