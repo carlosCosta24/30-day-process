@@ -302,9 +302,13 @@ for (let s = 0; s < asabenehChallenges2020.author.qualifications.length; s++) {
     body.appendChild(theQualificationList)
 }
 
+let keysTittle = document.createElement("p")
+keyWordsSection.appendChild(tittle)
 for (let r = 0; r < asabenehChallenges2020.keywords.length; r++) {
     let elements = document.createElement("span")
-    elements.textContent = `#${asabenehChallenges2020.keywords[r]}`
+    elements.classList.add("keys")
+    tittle.textContent = "Keywords"
+    elements.textContent = `# ${asabenehChallenges2020.keywords[r]}`
     keyWordsSection.appendChild(elements)
     body.append(keyWordsSection)
 }
@@ -352,6 +356,34 @@ for (let h = 0; h < listLi.length; h++) {
         listLi[h].style.backgroundColor = "red"
     }
 }
+
+//keywords
+keyWordsSection.classList.add("key-div")
+let keyWordDiv = document.querySelector(".key-div")
+keyWordDiv.style.backgroundColor = "#afafcb"
+keyWordDiv.style.padding = "20px"
+keyWordDiv.style.gap = "10px"
+keyWordDiv.style.lineHeight = "35px"
+
+
+//keys
+
+let keysBackGround = document.querySelectorAll(".keys")
+keysBackGround.forEach(element => {
+
+    element.style.backgroundColor = `${colorArray[Math.floor(Math.random() * 30)]}`
+    element.style.width = "30px"
+    element.style.height = "20px"
+    element.style.margin = "10px"
+    element.style.borderRadius = "20px"
+    element.style.color = `${colorArray[Math.floor(Math.random() * 30)]}`
+
+})
+
+
+
+
+
 
 
 
