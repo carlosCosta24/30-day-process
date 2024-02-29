@@ -338,6 +338,7 @@ list.style.flexDirection = "column"
 list.style.width = "540px"
 list.style.listStyle = "none"
 
+
 Array.of(list).forEach(li => {
     li.classList.add("color-list")
 })
@@ -346,15 +347,14 @@ let coloredList = document.querySelectorAll(".color-list")
 
 for (let h = 0; h < coloredList.length; h++) {
     coloredList[h].style.display = "flex"
-    coloredList[h].style.flexDirection = "row"
+    coloredList[h].style.flexDirection = "column"
     coloredList[h].style.alignItems = "center"
     coloredList[h].style.justifyContent = "space-around"
-
-    if (coloredList[h].textContent.includes("Done")) {
+    if (coloredList[h].textContent.toLowerCase().includes("done")) {
 
         coloredList[h].style.backgroundColor = "green"
 
-    } else if (coloredList[h].textContent.includes("Ongoing")) {
+    } else if (coloredList[h].textContent.toLowerCase().includes("Ongoing")) {
 
         coloredList[h].style.backgroundColor = "orange"
 
@@ -363,6 +363,7 @@ for (let h = 0; h < coloredList.length; h++) {
         coloredList[h].style.backgroundColor = "red"
     }
 }
+
 //icon section
 iconSection.style.display = "flex"
 iconSection.style.justifyContent = "center"
