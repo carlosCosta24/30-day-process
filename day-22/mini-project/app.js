@@ -342,30 +342,29 @@ list.style.listStyle = "none"
 
 
 
-list.forEach(li => {
+Array.of(list).forEach(li => {
 
     li.classList.add("color-list")
 })
-let listLi = document.querySelectorAll(".color-list")
-console.log(listLi)
+let coloredList = document.querySelectorAll(".color-list")
 
-for (let h = 0; h < listLi.length; h++) {
-    listLi[h].style.display = "flex"
-    listLi[h].style.flexDirection = "row"
-    listLi[h].style.alignItems = "center"
-    listLi[h].style.justifyContent = "space-around"
+for (let h = 0; h < coloredList.length; h++) {
+    coloredList[h].style.display = "flex"
+    coloredList[h].style.flexDirection = "row"
+    coloredList[h].style.alignItems = "center"
+    coloredList[h].style.justifyContent = "space-around"
 
-    if (listLi[h].textContent.includes("Done")) {
+    if (coloredList[h].textContent.includes("Done")) {
 
-        listLi[h].style.backgroundColor = "green"
+        coloredList[h].style.backgroundColor = "green"
 
-    } else if (listLi[h].textContent.includes("Ongoing")) {
+    } else if (coloredList[h].textContent.includes("Ongoing")) {
 
-        listLi[h].style.backgroundColor = "orange"
+        coloredList[h].style.backgroundColor = "orange"
 
     } else {
 
-        listLi[h].style.backgroundColor = "red"
+        coloredList[h].style.backgroundColor = "red"
     }
 }
 //icon section
