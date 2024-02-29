@@ -235,7 +235,7 @@ const list = document.createElement("ul")
 const nameSection = document.createElement("div")
 const iconSection = document.createElement("div")
 const infoSection = document.createElement("p")
-const skillsSection = document.createElement("div")
+const skillsSection = document.createElement("ul")
 const keyWordsSection = document.createElement("div")
 
 //adding the content from the object
@@ -267,31 +267,33 @@ body.append(nameSection)
 
 for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
     let newIcon = document.createElement("span")
-    newIcon.textContent = asabenehChallenges2020.author.socialLinks[r].social
+    newIcon.innerHTML = asabenehChallenges2020.author.socialLinks[r].fontawesomeIcon
     iconSection.appendChild(newIcon)
 
 }
+
+body.appendChild(iconSection)
 
 infoSection.textContent = asabenehChallenges2020.author.bio
 body.appendChild(iconSection)
 body.appendChild(infoSection)
 
 
-
+let allSkillsSection = document.createElement("div")
 let theTitlesList = document.createElement("ul")
 for (let s = 0; s < asabenehChallenges2020.author.titles.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.titles[s][0] + asabenehChallenges2020.author.titles[s][1]
     theTitlesList.appendChild(listElement)
     skillsSection.appendChild(theTitlesList)
-    body.appendChild(theTitlesList)
+    allSkillsSection.appendChild(skillsSection)
 }
 let theSkillList = document.createElement("ul")
 for (let s = 0; s < asabenehChallenges2020.author.skills.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.skills[s]
     theSkillList.appendChild(listElement)
-    body.appendChild(theSkillList)
+    allSkillsSection.appendChild(theSkillList)
 
 }
 let theQualificationList = document.createElement("ul")
@@ -299,8 +301,12 @@ for (let s = 0; s < asabenehChallenges2020.author.qualifications.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.qualifications[s]
     theQualificationList.appendChild(listElement)
-    body.appendChild(theQualificationList)
+    allSkillsSection.appendChild(theQualificationList)
 }
+
+body.append(allSkillsSection)
+
+body.append(allSkillsSection)
 
 let keysTittle = document.createElement("p")
 keyWordsSection.appendChild(tittle)
@@ -335,7 +341,13 @@ list.style.listStyle = "none"
 
 
 
-let listLi = document.querySelectorAll("li")
+
+list.forEach(li => {
+
+    li.classList.add("color-list")
+})
+let listLi = document.querySelectorAll(".color-list")
+console.log(listLi)
 
 for (let h = 0; h < listLi.length; h++) {
     listLi[h].style.display = "flex"
@@ -356,6 +368,34 @@ for (let h = 0; h < listLi.length; h++) {
         listLi[h].style.backgroundColor = "red"
     }
 }
+//icon section
+iconSection.style.display = "flex"
+iconSection.style.justifyContent = "center"
+iconSection.style.alignItems = "center"
+iconSection.style.gap = "20px"
+iconSection.style.height = "50px"
+
+//icons
+const icons = document.getElementsByClassName("fab")
+Array.from(icons).forEach(element => {
+    element.style.zoom = "3"
+
+
+})
+
+//paragraph
+infoSection.style.display = "flex"
+infoSection.style.height = "80px"
+infoSection.style.width = "600px"
+infoSection.style.textAlign = "center"
+
+//tittles
+allSkillsSection.style.display = "flex"
+allSkillsSection.style.alignItems = "center"
+
+
+
+
 
 //keywords
 keyWordsSection.classList.add("key-div")
