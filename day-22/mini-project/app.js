@@ -416,8 +416,6 @@ keysBackGround.forEach(element => {
     element.style.height = "20px"
     element.style.margin = "10px"
     element.style.borderRadius = "20px"
-    element.style.color = `${colorArray[Math.floor(Math.random() * 30)]}`
-
 })
 
 
