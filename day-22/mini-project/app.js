@@ -242,19 +242,18 @@ const keyWordsSection = document.createElement("div")
 heading.innerText = asabenehChallenges2020.description + " " + dateObject.getFullYear()
 span.innerText = months[dateObject.getMonth()] + " " + dateObject.getFullYear().toString().slice(2) + " " + dateObject.getUTCFullYear() + " : " + dateObject.getHours() + ":" + dateObject.getMinutes() + ":" + dateObject.getSeconds()
 tittle.textContent = asabenehChallenges2020.challengeSubtitle
-
 body.appendChild(heading)
 body.append(tittle)
 body.append(span)
 
 for (let r = 0; r < asabenehChallenges2020.challenges.length; r++) {
-    let element = document.createElement("li")
-    let listItem = document.createElement("details")
-    let summary = document.createElement("summary")
     let status = document.createElement("p")
-    listItem.textContent = asabenehChallenges2020.challenges[r].topics
+    let element = document.createElement("li")
+    let summary = document.createElement("summary")
+    let listItem = document.createElement("details")
     summary.textContent = asabenehChallenges2020.challenges[r].name
     status.textContent = asabenehChallenges2020.challenges[r].status
+    listItem.textContent = asabenehChallenges2020.challenges[r].topics
     element.appendChild(summary)
     element.appendChild(listItem)
     element.appendChild(status)
@@ -275,7 +274,6 @@ for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
 infoSection.textContent = asabenehChallenges2020.author.bio
 body.appendChild(iconSection)
 body.appendChild(infoSection)
-
 
 
 let theTitlesList = document.createElement("ul")
@@ -316,7 +314,6 @@ for (let r = 0; r < asabenehChallenges2020.keywords.length; r++) {
 //setInterval(() => { year[0].style.color = colorArray[Math.floor(Math.random() * 49)] }, 1000)
 setInterval(() => { span.style.backgroundColor = colorArray[Math.floor(Math.random() * 49)] }, 1000)
 
-
 //styling the web page
 body.style.display = "flex"
 body.style.flexDirection = "column"
@@ -324,7 +321,6 @@ body.style.alignItems = "center"
 body.style.fontFamily = "cursive"
 
 //tittle
-
 tittle.style.textDecoration = "underline"
 
 //list
@@ -367,7 +363,6 @@ keyWordDiv.style.lineHeight = "35px"
 
 
 //keys
-
 let keysBackGround = document.querySelectorAll(".keys")
 keysBackGround.forEach(element => {
 
@@ -377,7 +372,6 @@ keysBackGround.forEach(element => {
     element.style.margin = "10px"
     element.style.borderRadius = "20px"
     element.style.color = `${colorArray[Math.floor(Math.random() * 30)]}`
-
 })
 
 
