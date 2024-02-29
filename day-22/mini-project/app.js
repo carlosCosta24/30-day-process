@@ -330,7 +330,6 @@ body.style.alignItems = "center"
 body.style.fontFamily = "cursive"
 
 //tittle
-
 tittle.style.textDecoration = "underline"
 
 //list
@@ -339,13 +338,10 @@ list.style.flexDirection = "column"
 list.style.width = "540px"
 list.style.listStyle = "none"
 
-
-
-
 Array.of(list).forEach(li => {
-
     li.classList.add("color-list")
 })
+
 let coloredList = document.querySelectorAll(".color-list")
 
 for (let h = 0; h < coloredList.length; h++) {
@@ -378,8 +374,6 @@ iconSection.style.height = "50px"
 const icons = document.getElementsByClassName("fab")
 Array.from(icons).forEach(element => {
     element.style.zoom = "3"
-
-
 })
 
 //paragraph
@@ -393,9 +387,6 @@ allSkillsSection.style.display = "flex"
 allSkillsSection.style.alignItems = "center"
 
 
-
-
-
 //keywords
 keyWordsSection.classList.add("key-div")
 let keyWordDiv = document.querySelector(".key-div")
@@ -406,15 +397,20 @@ keyWordDiv.style.lineHeight = "35px"
 
 
 //keys
-
 let keysBackGround = document.querySelectorAll(".keys")
 keysBackGround.forEach(element => {
 
     element.style.backgroundColor = `${colorArray[Math.floor(Math.random() * 30)]}`
-    element.style.width = "30px"
-    element.style.height = "20px"
+    element.style.width = "auto"
+    element.style.height = "40px"
     element.style.margin = "10px"
-    element.style.borderRadius = "20px"
+    element.style.borderRadius = "40px"
+    element.style.margin = "10px"
+    element.style.display = "inline-flex"
+    element.style.alignContent = "center"
+    element.style.justifyContent = "center"
+    element.style.padding = "10px"
+    element.style.fontWeight = "700"
 })
 
 
