@@ -302,7 +302,7 @@ skillsSHeader.textContent = "Skills"
 theSkillList.append(skillsSHeader)
 for (let s = 0; s < asabenehChallenges2020.author.skills.length; s++) {
     let listElement = document.createElement("li")
-    listElement.textContent = asabenehChallenges2020.author.skills[s]
+    listElement.innerHTML = `<i class="fa-solid fa-circle-check"></i>` + " " + asabenehChallenges2020.author.skills[s]
     listElement.style.listStyle = "none"
     theSkillList.appendChild(listElement)
     allSkillsSection.appendChild(theSkillList)
@@ -354,28 +354,31 @@ list.style.width = "540px"
 list.style.listStyle = "none"
 
 
+
 Array.of(list).forEach(li => {
     li.classList.add("color-list")
 })
 
-let coloredList = document.querySelectorAll(".color-list")
+let coloredList = document.querySelector(".color-list")
+console.log(coloredList.childNodes)
 
-for (let h = 0; h < coloredList.length; h++) {
-    coloredList[h].style.display = "flex"
-    coloredList[h].style.flexDirection = "column"
-    coloredList[h].style.alignItems = "center"
-    coloredList[h].style.justifyContent = "space-around"
-    if (coloredList[h].textContent.toLowerCase().includes("done")) {
+for (let h = 0; h < coloredList.childNodes.length; h++) {
+    let child = coloredList.childNodes[h]
+    child.style.display = "flex"
+    child.style.flexDirection = "column"
+    child.style.alignItems = "center"
+    child.style.justifyContent = "space-around"
+    if (child.textContent.toLowerCase().includes("done")) {
 
-        coloredList[h].style.backgroundColor = "green"
+        child.style.backgroundColor = "green"
 
-    } else if (coloredList[h].textContent.toLowerCase().includes("Ongoing")) {
+    } else if (child.textContent.toLowerCase().includes("ongoing")) {
 
-        coloredList[h].style.backgroundColor = "orange"
+        child.style.backgroundColor = "orange"
 
     } else {
 
-        coloredList[h].style.backgroundColor = "red"
+        child.style.backgroundColor = "red"
     }
 }
 
