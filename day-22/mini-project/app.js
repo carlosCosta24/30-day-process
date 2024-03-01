@@ -263,6 +263,10 @@ for (let r = 0; r < asabenehChallenges2020.challenges.length; r++) {
 
 body.append(list)
 nameSection.textContent = asabenehChallenges2020.author.firstName + asabenehChallenges2020.author.lastName
+nameSection.style.fontSize = "30px"
+nameSection.style.fontWeight = "700"
+nameSection.style.marginBottom = "10px"
+
 body.append(nameSection)
 
 for (let r = 0; r < asabenehChallenges2020.author.socialLinks.length; r++) {
@@ -281,31 +285,42 @@ body.appendChild(infoSection)
 
 let allSkillsSection = document.createElement("div")
 let theTitlesList = document.createElement("ul")
+let titlesHeader = document.createElement("h3")
+titlesHeader.textContent = "titles"
+theTitlesList.append(titlesHeader)
 for (let s = 0; s < asabenehChallenges2020.author.titles.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.titles[s][0] + asabenehChallenges2020.author.titles[s][1]
+    theTitlesList.style.listStyle = "none"
     theTitlesList.appendChild(listElement)
     skillsSection.appendChild(theTitlesList)
     allSkillsSection.appendChild(skillsSection)
 }
 let theSkillList = document.createElement("ul")
+let skillsSHeader = document.createElement("h3")
+skillsSHeader.textContent = "Skills"
+theSkillList.append(skillsSHeader)
 for (let s = 0; s < asabenehChallenges2020.author.skills.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.skills[s]
+    listElement.style.listStyle = "none"
     theSkillList.appendChild(listElement)
     allSkillsSection.appendChild(theSkillList)
 
 }
 let theQualificationList = document.createElement("ul")
+let qualificationsHeader = document.createElement("h3")
+qualificationsHeader.textContent = "Qualifications"
+theQualificationList.append(qualificationsHeader)
 for (let s = 0; s < asabenehChallenges2020.author.qualifications.length; s++) {
     let listElement = document.createElement("li")
     listElement.textContent = asabenehChallenges2020.author.qualifications[s]
+    listElement.style.listStyle = "none"
     theQualificationList.appendChild(listElement)
     allSkillsSection.appendChild(theQualificationList)
 }
 
 body.append(allSkillsSection)
-
 body.append(allSkillsSection)
 
 let keysTittle = document.createElement("p")
@@ -388,10 +403,10 @@ allSkillsSection.style.display = "flex"
 allSkillsSection.style.alignItems = "center"
 
 
+
 //keywords
 keyWordsSection.classList.add("key-div")
 let keyWordDiv = document.querySelector(".key-div")
-keyWordDiv.style.backgroundColor = "#afafcb"
 keyWordDiv.style.padding = "20px"
 keyWordDiv.style.gap = "10px"
 keyWordDiv.style.lineHeight = "35px"
@@ -403,7 +418,7 @@ keysBackGround.forEach(element => {
 
     element.style.backgroundColor = `${colorArray[Math.floor(Math.random() * 30)]}`
     element.style.width = "auto"
-    element.style.height = "40px"
+    element.style.height = "30px"
     element.style.margin = "10px"
     element.style.borderRadius = "40px"
     element.style.margin = "10px"
