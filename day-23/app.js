@@ -10,10 +10,14 @@ const projectName = document.querySelector(".name")
 button.addEventListener("click", () => {
     let input = inputBox.value
     let number = parseInt(input)
+    massage.style.height = "auto"
+    massage.style.width = "auto"
 
     if (isNaN(number)) {
         massage.textContent = "please input a number !"
     } else {
+        massage.textContent = " "
+
         numBox.innerHTML = " "
         for (let y = 0; y < input; y++) {
             let box = document.createElement("span")
