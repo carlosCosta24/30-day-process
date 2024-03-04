@@ -4,6 +4,7 @@ const button = document.querySelector("button")
 const massage = document.querySelector(".input-massage")
 const numBox = document.querySelector(".number-box")
 const actionArea = document.querySelector(".action-area")
+const projectName = document.querySelector(".name")
 
 //functions
 button.addEventListener("click", () => {
@@ -11,7 +12,7 @@ button.addEventListener("click", () => {
     let number = parseInt(input)
 
     if (isNaN(number)) {
-        massage.textContent = "please input a number!"
+        massage.textContent = "please input a number !"
     } else {
         numBox.innerHTML = " "
         for (let y = 0; y < input; y++) {
@@ -69,8 +70,10 @@ body.style.height = "auto"
 body.style.width = "auto"
 body.style.margin = "50px"
 
-//actionArea
+//name section
+projectName.style.fontSize = "30px"
 
+//actionArea
 actionArea.style.display = "flex"
 actionArea.style.flexDirection = "column"
 actionArea.style.gap = "20px"
@@ -79,8 +82,6 @@ actionArea.style.margin = "10px"
 actionArea.style.padding = "10px"
 actionArea.style.fontSize = "30px"
 actionArea.style.color = "red"
-
-
 
 //numBox
 numBox.style.display = "flex"
@@ -97,15 +98,16 @@ numBox.style.padding = "10px"
 
 //inputBox
 inputBox.style.width = "600px"
-inputBox.style.height = "20px"
+inputBox.style.height = "30px"
 inputBox.style.padding = "5px"
 inputBox.style.borderRadius = "20px"
 inputBox.style.border = "2px solid green"
 inputBox.style.outline = "none"
 inputBox.style.textAlign = "center"
+inputBox.style.fontSize = "30"
+
 
 //button
-
 button.style.width = "100px"
 button.style.height = "36px"
 button.style.borderRadius = "20px"
