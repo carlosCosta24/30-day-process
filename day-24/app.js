@@ -5,67 +5,84 @@ const resultSection = document.querySelector(".result-section")
 const options = document.querySelectorAll("option")
 const resultDiv = document.querySelector(".result-div")
 const plantImge = document.querySelector(".plant-imge")
+const result = document.querySelector(".result")
 
 
-function massCalculation() {
+
+button.addEventListener("click", massCalculation = () => {
     let value = parseInt(inputArea.value)
     if (isNaN(value)) {
         resultDiv.innerHTML = " "
-        resultSection.textContent = "please enter a number "
+        resultSection.innerHTML = " "
+        resultSection.textContent = "please enter a number"
         resultDiv.append(resultSection)
+        console.log(value)
     } else {
         let theMass
         let theImageSource
-        let selectedPlant = options.values.toLowerCase()
+        let selectedPlant = options.textContent
+        console.log(selectedPlant)
         switch (selectedPlant) {
-            case earth:
+            case "earth":
+                selectedPlant.toLocaleLowerCase() == "earth"
                 theMass = value * 8.9
                 theImageSource = "/day-24/images/earth.png"
                 break
-            case jupiter:
+            case "jupiter":
+                selectedPlant.toLocaleLowerCase() == "jupiter"
                 theMass = value * 24.79
                 theImageSource = "/day-24/images/jupiter.png"
                 break
-            case mars:
+            case "mars":
+                selectedPlant.toLocaleLowerCase() == "mars"
                 theMass = value * 3.721
                 theImageSource = "/day-24/images/mars.png"
                 break
-            case mercury:
+            case "mercury":
+                selectedPlant.toLocaleLowerCase() == "mercury"
                 theMass = value * 3.7
                 theImageSource = "/day-24/images/mercury.png"
                 break
-            case pluto:
+            case "pluto":
+                selectedPlant.toLocaleLowerCase() === "pluto"
                 theMass = value * 0.62
                 theImageSource = "/day-24/images/pluto.png"
                 break
-            case saturn:
+            case "saturn":
+                selectedPlant.toLocaleLowerCase() === "saturn"
                 theMass = value * 10.44
                 theImageSource = "/day-24/images/saturn.png"
                 break
-            case moon:
+            case "moon":
+                selectedPlant.toLocaleLowerCase() === "moon"
                 theMass = value * 1.62
                 theImageSource = "/day-24/images/moon.png"
                 break
-            case neptune:
+            case "neptune":
+                selectedPlant.toLocaleLowerCase() === "neptune"
                 theMass = value * 11.15
                 theImageSource = "/day-24/images/neptune.png"
                 break
-            case uranus:
+            case "uranus":
+                selectedPlant.toLocaleLowerCase() === "uranus"
                 theMass = value * 8.69
                 theImageSource = "/day-24/images/uranus.png"
                 break
-            case venus:
+            case "venus":
+                selectedPlant.toLocaleLowerCase() === "venus"
                 theMass = value * 8.87
                 theImageSource = "/day-24/images/venus.png"
             default:
-                theMass = "not defined"
+                theMass = value * 8.9
+                theImageSource = "/day-24/images/earth.png"
                 break;
         }
-        resultSection.textContent = `${theMass} N`
+        result.textContent = `${theMass} N`
         plantImge.setAttribute("src", theImageSource)
         resultDiv.append(resultSection)
         resultDiv.append(plantImge)
-    }
-}
 
-button.addEventListener("click", massCalculation())
+    }
+})
+
+
