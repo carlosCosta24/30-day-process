@@ -25,6 +25,7 @@ button.addEventListener("click", massCalculation = () => {
                 selectedPlant = option.value.toLowerCase();
             }
         });
+
         switch (selectedPlant) {
             case "earth":
                 theMass = value * 8.9
@@ -67,10 +68,10 @@ button.addEventListener("click", massCalculation = () => {
                 theImageSource = "/day-24/images/venus.png"
                 break
             default:
-                theMass = value * 8.9
-                theImageSource = "/day-24/images/earth.png"
+                alert("please select a plant")
                 break;
         }
+
         resultSection.textContent = " "
         resultDiv.append(resultSection)
         result.textContent = `${theMass} N`
