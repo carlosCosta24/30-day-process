@@ -4,8 +4,8 @@ const button = document.querySelector(".action-button")
 const resultSection = document.querySelector(".result-section")
 const options = document.querySelectorAll("option")
 const resultDiv = document.querySelector(".result-div")
-const plantImge = document.querySelector(".plant-imge")
 const result = document.querySelector(".result")
+const imgFrame = document.querySelector(".img-side")
 
 
 
@@ -73,9 +73,11 @@ button.addEventListener("click", massCalculation = () => {
                     console.error("no planet selected")
                     break;
             }
-            resultDiv.append(resultSection)
-            result.textContent = `${theMass} N`
+            const plantImge = document.createElement("img")
+            plantImge.setAttribute("class", "plant-imge")
             plantImge.setAttribute("src", theImageSource)
+            resultDiv.append(resultSection)
+            result.textContent = `${theMass.toFixed(2)} N`
             resultDiv.innerHTML = "";
             resultDiv.append(resultSection)
             resultDiv.append(plantImge)
