@@ -1,4 +1,4 @@
-const countries_data = [
+const countriesData = [
     {
         "name": "Afghanistan",
         "capital": "Kabul",
@@ -2862,3 +2862,23 @@ const countries_data = [
         "area": 390757
     }
 ]
+const populationButton = document.querySelector(".population-button")
+const languageButton = document.querySelector(".language-button")
+const buttoMasseage = document.querySelector(".action-span")
+const presentDiv = document.querySelector(".present-div")
+
+
+//language function
+function tenLanguage() {
+    let language = []
+    for (let h = 0; h < countriesData.length; h++) {
+        let languageLocation = countriesData[h].languages
+        for (let l = 0; l < languageLocation.length; l++) {
+            language.push(languageLocation[l])
+        }
+
+    }
+    let filtererdLanguage = [...new Set(language)]
+
+    return filtererdLanguage
+}
