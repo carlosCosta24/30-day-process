@@ -2885,6 +2885,7 @@ function tenLanguage() {
 
 // population function
 populationButton.addEventListener("click", () => {
+    presentDiv.innerHTML = " "
     let population = {}
     for (let p = 0; p < countriesData.length; p++) {
         let name = countriesData[p].name
@@ -2899,13 +2900,28 @@ populationButton.addEventListener("click", () => {
             acc[key] = value
             return acc
         }, {})
-    console.log(sortedPopulation)
     for (const item in sortedPopulation) {
         let chartName = document.createElement("span")
-        chartName.textContent = item.name
-        presentDiv.append(chartName)
-        console.log(chartName)
+        let charGraph = document.createElement("progress")
+        let charvalue = document.createElement("span")
+
+        chartName.setAttribute("class", "chart-name")
+        charGraph.setAttribute("class", "chart-graph")
+        charvalue.setAttribute("class", "chart-value")
+
+        charGraph.setAttribute("value", sortedPopulation[item])
+        charGraph.setAttribute("max", sortedPopulation[item] + 100000000)
+
+        charvalue.textContent = sortedPopulation[item].toLocaleString()
+        chartName.textContent = item
+
+        let container = document.createElement("div")
+        container.setAttribute("class", "chart-container")
+        charGraph.textContent = `${sortedPopulation[item]}`
+        container.appendChild(chartName)
+        container.appendChild(charGraph)
+        container.appendChild(charvalue)
+
+        presentDiv.appendChild(container)
     }
-
-
 })
