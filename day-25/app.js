@@ -2910,7 +2910,7 @@ populationButton.addEventListener("click", () => {
         charvalue.setAttribute("class", "chart-value")
 
         charGraph.setAttribute("value", sortedPopulation[item])
-        charGraph.setAttribute("max", sortedPopulation[item] + 100000000)
+        charGraph.setAttribute("max", 2000000000)
 
         charvalue.textContent = sortedPopulation[item].toLocaleString()
         chartName.textContent = item
@@ -2921,7 +2921,6 @@ populationButton.addEventListener("click", () => {
         container.appendChild(chartName)
         container.appendChild(charGraph)
         container.appendChild(charvalue)
-
         presentDiv.appendChild(container)
     }
 })
