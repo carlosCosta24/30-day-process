@@ -2882,3 +2882,30 @@ function tenLanguage() {
 
     return filtererdLanguage
 }
+
+// population function
+
+function population() {
+    let population = {}
+    let final = []
+    for (let p = 0; p < countriesData.length; p++) {
+        let name = countriesData[p].name
+        let pop = countriesData[p].population
+        population[name] = pop
+
+    }
+    const sortedPopulation = Object.entries(population)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 11)
+        .reduce((acc, [key, value]) => {
+            acc[key] = value
+            return acc
+        }, {})
+
+
+
+    console.log(sortedPopulation)
+    return sortedPopulation
+}
+
+population()
