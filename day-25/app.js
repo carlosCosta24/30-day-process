@@ -2884,10 +2884,8 @@ function tenLanguage() {
 }
 
 // population function
-
-function population() {
+populationButton.addEventListener("click", () => {
     let population = {}
-    let final = []
     for (let p = 0; p < countriesData.length; p++) {
         let name = countriesData[p].name
         let pop = countriesData[p].population
@@ -2901,11 +2899,13 @@ function population() {
             acc[key] = value
             return acc
         }, {})
-
-
-
     console.log(sortedPopulation)
-    return sortedPopulation
-}
+    for (const item in sortedPopulation) {
+        let chartName = document.createElement("span")
+        chartName.textContent = item.name
+        presentDiv.append(chartName)
+        console.log(chartName)
+    }
 
-population()
+
+})
