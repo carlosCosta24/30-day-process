@@ -2869,19 +2869,21 @@ const presentDiv = document.querySelector(".present-div")
 
 
 //language function
-function tenLanguage() {
-    let language = []
+languageButton.addEventListener("click", () => {
+    let langFreq = {}
     for (let h = 0; h < countriesData.length; h++) {
         let languageLocation = countriesData[h].languages
         for (let l = 0; l < languageLocation.length; l++) {
-            language.push(languageLocation[l])
+            let lang = languageLocation[l]
+            if (langFreq[lang]) {
+                langFreq[lang]++
+            } else {
+                langFreq[lang] = 1
+            }
         }
-
     }
-    let filtererdLanguage = [...new Set(language)]
-
-    return filtererdLanguage
-}
+    console.log(langFreq)
+})
 
 // population function
 populationButton.addEventListener("click", () => {
