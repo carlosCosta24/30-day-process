@@ -2870,6 +2870,7 @@ const presentDiv = document.querySelector(".present-div")
 
 //language function
 languageButton.addEventListener("click", () => {
+    presentDiv.innerHTML = " "
     let langFreq = {}
     for (let h = 0; h < countriesData.length; h++) {
         let languageLocation = countriesData[h].languages
@@ -2882,7 +2883,37 @@ languageButton.addEventListener("click", () => {
             }
         }
     }
-    console.log(langFreq)
+    let sortedLang = Object.entries(langFreq)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10)
+        .reduce((acc, [key, value]) => {
+            acc[key] = value
+            return acc
+        }, {})
+
+    for (const item in sortedLang) {
+        let chartName = document.createElement("span")
+        let charGraph = document.createElement("progress")
+        let charvalue = document.createElement("span")
+
+        chartName.setAttribute("class", "chart-name")
+        charGraph.setAttribute("class", "chart-graph")
+        charvalue.setAttribute("class", "chart-value")
+
+        charGraph.setAttribute("value", sortedLang[item])
+        charGraph.setAttribute("max", 100)
+
+        charvalue.textContent = sortedLang[item].toLocaleString()
+        chartName.textContent = item
+
+        let container = document.createElement("div")
+        container.setAttribute("class", "chart-container")
+        charGraph.textContent = `${sortedLang[item]}`
+        container.appendChild(chartName)
+        container.appendChild(charGraph)
+        container.appendChild(charvalue)
+        presentDiv.appendChild(container)
+    }
 })
 
 // population function
