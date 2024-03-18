@@ -2928,7 +2928,7 @@ populationButton.addEventListener("click", () => {
     }
     const sortedPopulation = Object.entries(population)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 11)
+        .slice(0, 10)
         .reduce((acc, [key, value]) => {
             acc[key] = value
             return acc
