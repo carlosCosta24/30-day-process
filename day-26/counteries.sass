@@ -11,7 +11,41 @@ body
         height: 450px
         width: 100vw
         align-items: center
-        justify-content: space-between
+        gap: 60px
+        .title
+            display: flex
+        .counteries-number
+            display: flex
+        .search-titile
+            display: flex
+        .search-area
+            display: flex
+            flex-direction: column
+            .f-row
+                width: 500px
+                display: flex
+                align-items: center
+                justify-content: space-evenly
+                margin: 20px
+                .search-by-first,
+                .search-by-any,
+                .sort-it
+                    outline: none
+                    border: none
+                    border-radius: 20px
+                    width: 150px
+                    background: #faac32
+            .s-row
+                display: flex
+                width: 500px
+                align-items: center
+                justify-content: space-evenly
+                .text
+                    display: flex
+                    border: none
+                    border-radius: 20px
+                    width: 105px
+                    height: 50px
         &::before
             content: " "
             height: inherit
