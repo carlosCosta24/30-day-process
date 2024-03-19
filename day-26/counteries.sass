@@ -35,6 +35,7 @@ body
                     border-radius: 20px
                     width: 150px
                     background: #faac32
+                    cursor: pointer
             .s-row
                 display: flex
                 width: 500px
@@ -46,6 +47,27 @@ body
                     border-radius: 20px
                     width: 105px
                     height: 50px
+                .search-box
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: 300px
+                    height: 30px
+                    border: none
+                    border-radius: 20px
+                    outline: none
+                    padding: 10px
+
+                .icon
+                    width: 40px
+                    height: 40px
+                    scale: 1.9
+                    display: flex
+                    justify-content: center
+                    align-content: center
+                    flex-wrap: wrap
+                    .fa-brands
+                        color: #0c09ecdb
         &::before
             content: " "
             height: inherit
@@ -54,25 +76,28 @@ body
             background-size: cover
             height: 450px
             width: 100vw
-            opacity: 0.3
+            opacity: 0.7
             position: absolute
             z-index: -10
+            box-shadow: inset 0 0 0 1000px #1e36ada1
     .visual-container
         height: auto
         width: auto
         display: flex
-        flex-direction: column
+        flex-direction: row
         gap: 10px
         align-items: center
         justify-content: center
         padding: 10px
+        flex-wrap: wrap
         .country-item
             display: flex
-            width: 100px
-            height: 100px
+            width: 150px
+            height: 150px
             background-image: url(/day-26/images/map_image.jpg)
             background-size: cover
             align-items: center
             justify-content: center
             color: #fff
             box-shadow: inset 0 0 0 1000px #03003063
+            text-align: center
