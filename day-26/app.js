@@ -229,18 +229,23 @@ searchByFirst.addEventListener('click', () => {
 
 
 // method two
-const methodTwo = () => {
+searchByAny.addEventListener('click', () => {
     let word = searchArea.value.toLowerCase()
-    for (let x = 0; x < countries.length; x++) {
-        let newCountry = document.createElement("div")
-        if (countries[x].toLowerCase().includes(word)) {
-            newCountry.innerText = countries[x]
-            newCountry.setAttribute("class", "country-item")
-            visualArea.append(newCountry)
+    if (word === '') {
+        alert('enter at least letter')
+    } else {
+        visualArea.innerHTML = ''
+        for (let x = 0; x < countries.length; x++) {
+            let newCountry = document.createElement("div")
+            if (countries[x].toLowerCase().includes(word)) {
+                newCountry.innerText = countries[x]
+                newCountry.setAttribute("class", "country-item")
+                visualArea.append(newCountry)
+            }
         }
     }
 
-}
+})
 
 // sort function
 
