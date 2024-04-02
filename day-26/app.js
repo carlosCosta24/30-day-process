@@ -209,18 +209,24 @@ for (let i = 0; i < countries.length; i++) {
 }
 
 //first search method
-const methodONe = () => {
+searchByFirst.addEventListener('click', () => {
     let word = searchArea.value.toLowerCase()
-    for (let r = 0; r < countries.length; r++) {
-        let newCountry = document.createElement("div")
-        if (countries[r].toLowerCase().startsWith(word)) {
-            newCountry.innerText = countries[r]
-            newCountry.setAttribute("class", "country-item")
-            visualArea.append(newCountry)
+    if (word === '') {
+        alert('plese enter a word ')
+    } else {
+        visualArea.innerHTML = ''
+        for (let r = 0; r < countries.length; r++) {
+            let newCountry = document.createElement("div")
+            if (countries[r].toLowerCase().startsWith(word)) {
+                newCountry.innerText = countries[r]
+                newCountry.setAttribute("class", "country-item")
+                visualArea.append(newCountry)
+            }
         }
     }
 
-}
+})
+
 
 // method two
 const methodTwo = () => {
