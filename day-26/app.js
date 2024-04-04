@@ -202,6 +202,7 @@ const upIcon = document.querySelector("#up")
 const downIcon = document.querySelector("#down")
 
 //injecting countries name
+upIcon.style.display = 'none'
 
 for (let i = 0; i < countries.length; i++) {
     let newCountry = document.createElement("div")
@@ -252,35 +253,22 @@ searchByAny.addEventListener('click', () => {
 // sort function
 
 sort.addEventListener('click', () => {
-    let value = sort.value
-
-    if (value === 'assendig') {
-        orderCountry()
+    let value = sort.getAttribute('value')
+    if (value !== 'assendig') {
+        orderCountry('ass')
+        upIcon.style.display = "none"
+        downIcon.style.display = "block"
+        sort.setAttribute('value', 'assendig')
         alert('now you have assending order')
     } else {
-        let sortedArr = countries.sort()
+        orderCountry('des')
+        downIcon.style.display = "none"
+        upIcon.style.display = "block"
+        sort.setAttribute('value', 'deassendig')
+        alert('now you have deassending order')
 
-        upIcon.style.display = "none"
-        value = 'deassendig'
 
     }
-    if (value === 'assendig') {
-        visualArea.innerHTML = ''
-        let sortedArr = countries.sort()
-        visualArea.innerHTML = ''
-        for (let y = sortedArr.length - 1; y >= 0; y--) {
-            let newCountry = document.createElement("div")
-            newCountry.innerText = sortedArr[y]
-            newCountry.setAttribute("class", "country-item")
-            visualArea.append(newCountry)
-
-
-        }
-        downIcon.style.display = 'none'
-        value = 'assendig'
-
-    }
-
 })
 
 function orderCountry(direction) {
@@ -288,13 +276,13 @@ function orderCountry(direction) {
     if (direction === 'ass') {
         arrDirection = countries.sort()
 
-    } else {
+    } else if (direction === 'des') {
         arrDirection = countries.sort().reverse()
     }
     visualArea.innerHTML = ''
     for (let y = 0; y < arrDirection.length; y++) {
         let newCountry = document.createElement("div")
-        newCountry.innerText = sortedArr[y]
+        newCountry.innerText = arrDirection[y]
         newCountry.setAttribute("class", "country-item")
         visualArea.append(newCountry)
     }
