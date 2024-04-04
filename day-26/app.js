@@ -253,23 +253,19 @@ searchByAny.addEventListener('click', () => {
 
 sort.addEventListener('click', () => {
     let value = sort.value
+
     if (value === 'assendig') {
-        alert('it\'s alredy in assending order ')
+        orderCountry()
+        alert('now you have assending order')
     } else {
-        visualArea.innerHTML = ''
         let sortedArr = countries.sort()
-        for (let y = 0; y < sortedArr.length; y++) {
-            let newCountry = document.createElement("div")
-            newCountry.innerText = sortedArr[y]
-            newCountry.setAttribute("class", "country-item")
-            visualArea.append(newCountry)
-        }
+
         upIcon.style.display = "none"
         value = 'deassendig'
 
     }
-    if (value === 'deassendig') {
-
+    if (value === 'assendig') {
+        visualArea.innerHTML = ''
         let sortedArr = countries.sort()
         visualArea.innerHTML = ''
         for (let y = sortedArr.length - 1; y >= 0; y--) {
@@ -277,12 +273,31 @@ sort.addEventListener('click', () => {
             newCountry.innerText = sortedArr[y]
             newCountry.setAttribute("class", "country-item")
             visualArea.append(newCountry)
+
+
         }
         downIcon.style.display = 'none'
-        value = 'deassendig'
+        value = 'assendig'
 
     }
 
 })
+
+function orderCountry(direction) {
+    let arrDirection
+    if (direction === 'ass') {
+        arrDirection = countries.sort()
+
+    } else {
+        arrDirection = countries.sort().reverse()
+    }
+    visualArea.innerHTML = ''
+    for (let y = 0; y < arrDirection.length; y++) {
+        let newCountry = document.createElement("div")
+        newCountry.innerText = sortedArr[y]
+        newCountry.setAttribute("class", "country-item")
+        visualArea.append(newCountry)
+    }
+}
 
 
