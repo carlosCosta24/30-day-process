@@ -8,6 +8,10 @@ body
     box-sizing: border-box
     margin: 0
     border: 0
+    height: 100vh
+    a
+        color: black
+        text-decoration: none
     header
         display: flex
         width: 90%
@@ -19,9 +23,26 @@ body
             display: flex
             letter-spacing: 10px
     .live-banner
-        background: pink
+
         height: 100px
         width: 90%
+        display: flex
+        align-items: center
+
+        .emoji
+            display: flex
+            padding: 10px
+            width: 20px
+            height: 20px
+        .skill
+            display: flex
+            padding: 10px
+            width: 150px
+            height: 20px
+            color: white
+            font-size: 20px
+            font-weight: 700
+
     .summary
         width: 90%
         display: flex
@@ -63,3 +84,17 @@ body
                 background: #fb005d47
                 transform: scale(1.05)
                 color: #4b00ff7d
+    .live-footer
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        border: 2px dotted pink
+        width: 90%
+        height: 100px
+        font-size: 18px
+        color: gray
+        padding: 10px
+        .live-skill
+            font-size: 30px
+            font-weight: 700
+            margin-left: 5px
