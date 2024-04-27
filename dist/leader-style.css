@@ -1,0 +1,1 @@
+body{display:flex;flex-direction:column;align-content:center;width:100vw;height:600px;overflow-x:hidden}body .board{display:flex;width:90%;padding:10px;flex-direction:column;border:2px dotted pink}body .ticket{display:flex;flex-direction:row}/*# sourceMappingURL=leader-style.css.map */
