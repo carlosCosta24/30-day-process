@@ -1,13 +1,17 @@
 body
     display: flex
     flex-direction: column
-    align-content: center
-    // justify-content: space-between
     width: 100vw
     height: 600px
     overflow-x: hidden
+    header
+        text-align: center
+
     .input-section
         width: 90%
+        display: flex
+        align-items: center
+        justify-content: space-evenly
         &>input
             width: 180px
             height: 25px
@@ -15,6 +19,9 @@ body
             outline: none
             text-indent: 15px
             border-radius: 40px
+            &:focus
+                border: 1px solid #ff000051
+
         &>input[type=number]::-webkit-inner-spin-button,
         &>input[type=number]::-webkit-outer-spin-button
             -webkit-appearance: none
@@ -28,6 +35,9 @@ body
             cursor: pointer
             &:hover
                 background: #ffaa0021
+            &:focus
+                outline: none
+                border: 1px solid #ff000051
 
     .first-name
     .last-name
@@ -39,26 +49,42 @@ body
         width: 90%
         padding: 10px
         flex-direction: column
-        border: 2px dotted pink
         margin-top: 30px
+
     .ticket
         display: flex
         flex-direction: row
         align-items: center
-        justify-content: space-between
+        justify-content: space-around
+        background-color: #8383ff3f
+        border-radius: 20px
+        margin: 10px
         .info
             display: flex
             flex-direction: row
             min-width: 600px
             justify-content: center
+            justify-content: flex-start
             & > div
                 display: flex
                 align-items: center
                 justify-content: center
                 width: 100px
                 height: 40px
-                color: yellow
+                color: green
 
         .action
             display: flex
             flex-direction: row
+            width: 200px
+            justify-content: space-around
+            & > button
+                height: 30px
+                width: 30px
+                border-radius: 50%
+                background: none
+                border: 1px solid #8383ff
+                cursor: pointer
+                text-align: center
+            .del
+                border: 1px solid #ff8383

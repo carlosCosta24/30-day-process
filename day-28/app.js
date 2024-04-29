@@ -7,10 +7,7 @@ const firstName = document.querySelector('.first-name')
 const lastName = document.querySelector('.last-name')
 const score = document.querySelector('.score')
 const country = document.querySelector('.country')
-//action buttons
-const deleteButton = document.querySelector('.del')
-const addButton = document.querySelector('.add')
-const subButton = document.querySelector('.sub')
+
 
 
 const handelAdd = () => {
@@ -21,7 +18,7 @@ const handelAdd = () => {
         ticket.classList.add('ticket')
         ticket.innerHTML = `<div class="info">
         <div class="fName">${firstName.value}</div> <div class="lName">${lastName.value}</div> <div class="country">${country.value}</div><div class="ticket-score">${score.value}</div></div>
-        <div class="action"><button class="del">deleteButton</button> <button class="add">+5</button> <button class="sub">-5</button></div>`
+        <div class="action"><button class="del">d</button> <button class="add">+5</button> <button class="sub">-5</button></div>`
         board.append(ticket)
 
     }
@@ -30,3 +27,13 @@ const handelAdd = () => {
 
 
 addPlayer.addEventListener('click', handelAdd)
+if (board.querySelector('.ticket') !== null) {
+    //action buttons
+    const deleteButton = document.querySelector('.del')
+    const addButton = document.querySelector('.add')
+    const subButton = document.querySelector('.sub')
+
+    deleteButton.addEventListener('click', (e) => { console.log(e.target) })
+}
+// addButton.addEventListener('click',)
+// subButton.addEventListener('click',)
