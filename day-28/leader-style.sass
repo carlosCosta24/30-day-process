@@ -7,6 +7,28 @@ body
     height: 600px
     overflow-x: hidden
     .input-section
+        width: 90%
+        &>input
+            width: 180px
+            height: 25px
+            border: 1px solid #8383ff
+            outline: none
+            text-indent: 15px
+            border-radius: 40px
+        &>input[type=number]::-webkit-inner-spin-button,
+        &>input[type=number]::-webkit-outer-spin-button
+            -webkit-appearance: none
+            -moz-appearance: textfield
+        &>button
+            width: 90px
+            height: 30px
+            background: none
+            border-radius: 40px
+            border: 1px solid #8383ff
+            cursor: pointer
+            &:hover
+                background: #ffaa0021
+
     .first-name
     .last-name
     .country
@@ -18,6 +40,25 @@ body
         padding: 10px
         flex-direction: column
         border: 2px dotted pink
+        margin-top: 30px
     .ticket
         display: flex
         flex-direction: row
+        align-items: center
+        justify-content: space-between
+        .info
+            display: flex
+            flex-direction: row
+            min-width: 600px
+            justify-content: center
+            & > div
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 100px
+                height: 40px
+                color: yellow
+
+        .action
+            display: flex
+            flex-direction: row

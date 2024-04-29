@@ -7,24 +7,26 @@ const firstName = document.querySelector('.first-name')
 const lastName = document.querySelector('.last-name')
 const score = document.querySelector('.score')
 const country = document.querySelector('.country')
+//action buttons
+const deleteButton = document.querySelector('.del')
+const addButton = document.querySelector('.add')
+const subButton = document.querySelector('.sub')
 
-
-
-
-
-//body.addEventListener('click', () => { body.style.background = 'black', console.log('a7aa') })
 
 const handelAdd = () => {
-    if (firstName.value == '' || lastName.value == '' || score.value == '' || isNaN(score.value)) {
+    if (firstName.value == '' || lastName.value == '' || score.value == '' /*|| isNaN(score.value)*/) {
         alert('all felids are required ')
     } else {
         let ticket = document.createElement("div")
         ticket.classList.add('ticket')
-        ticket.innerHTML = `<div class="fName">${firstName.value}</div> <div class="lName">${lastName.value}</div> <div class="country">${country.value}</div><div class="ticket-score">${score.value}</div> <button>deleteButton</button> <button>+5</button> <button>-5</button>`
+        ticket.innerHTML = `<div class="info">
+        <div class="fName">${firstName.value}</div> <div class="lName">${lastName.value}</div> <div class="country">${country.value}</div><div class="ticket-score">${score.value}</div></div>
+        <div class="action"><button class="del">deleteButton</button> <button class="add">+5</button> <button class="sub">-5</button></div>`
         board.append(ticket)
 
     }
 
-
 }
+
+
 addPlayer.addEventListener('click', handelAdd)
