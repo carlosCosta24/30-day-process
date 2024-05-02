@@ -1,20 +1,27 @@
 const body = document.querySelector('body')
-const header = document.querySelector('header')
-const inputSection = document.querySelector('.input-section')
 const addPlayer = document.querySelector('.add-player')
 const board = document.querySelector('.board')
 const firstName = document.querySelector('.first-name')
 const lastName = document.querySelector('.last-name')
 const score = document.querySelector('.score')
 const country = document.querySelector('.country')
-const deleteButton = document.querySelector('.del')
+
 
 
 
 const handelAdd = () => {
-    if (firstName.value == '' || lastName.value == '' || score.value == '' || isNaN(score.value)) {
+    if (firstName.value == '' || lastName.value == '' || country.value == '' || score.value == '' || isNaN(score.value)) {
+        firstName.style.border = '2px solid red'
+        lastName.style.border = '2px solid red'
+        score.style.border = '2px solid red'
+        country.style.border = '2px solid red'
         alert('all felids are required ')
     } else {
+        firstName.style.border = ""
+        lastName.style.border = ""
+        score.style.border = ""
+        country.style.border = ""
+
         let ticket = document.createElement("div")
         ticket.classList.add('ticket')
         ticket.innerHTML = `<div class="info">
