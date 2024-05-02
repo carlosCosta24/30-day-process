@@ -25,21 +25,23 @@ const handelAdd = () => {
         ticket.querySelector('.add').addEventListener('click', addItem)
         ticket.querySelector('.sub').addEventListener('click', subItem)
 
-
+        sortBoard()
     }
 
 }
 const deleteItem = (e) => {
 
     e.target.closest('.ticket').remove()
+
 }
 const addItem = (e) => {
     let ticket = e.target.closest('.ticket')
     let currentScore = ticket.querySelector('.ticket-score')
     let newScore = parseInt(currentScore.textContent)
     let updated = newScore + 5
-
     currentScore.textContent = updated
+    sortBoard()
+
 
 
 }
@@ -56,11 +58,27 @@ const subItem = (e) => {
         currentScore.textContent = newScore
 
     }
+    sortBoard()
 
+
+
+}
+const sortBoard = () => {
+
+    let tickets = document.querySelectorAll('.ticket')
+    let ticketArray = Array.from(tickets)
+    ticketArray.sort((a, b) => {
+        let scoreA = parseInt(a.querySelector('.ticket-score').textContent)
+        let scoreB = parseInt(b.querySelector('.ticket-score').textContent)
+        return scoreB - scoreA
+
+    })
+    ticketArray.forEach(ticket => board.appendChild(ticket))
 
 }
 
 
 addPlayer.addEventListener('click', handelAdd)
+
 
 
